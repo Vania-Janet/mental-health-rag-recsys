@@ -28,14 +28,14 @@ export default function Page() {
   }, [])
 
   return (
-    <div className="flex flex-col h-screen bg-white">
+    <div className="flex flex-col h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
       {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-border">
-        <div className="flex items-center gap-2">
-          <div className="w-2 h-2 rounded-full bg-accent"></div>
-          <span className="text-sm font-medium text-muted-foreground">Calma</span>
+      <header className="flex items-center justify-between px-6 py-5 bg-white/80 backdrop-blur-sm border-b border-indigo-100">
+        <div className="flex items-center gap-3">
+          <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 animate-pulse"></div>
+          <span className="text-lg font-semibold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Calma</span>
         </div>
-        <button className="text-muted-foreground hover:text-foreground transition-colors">
+        <button className="text-indigo-400 hover:text-indigo-600 transition-colors">
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
           </svg>
@@ -45,32 +45,49 @@ export default function Page() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-between px-6 py-8 overflow-y-auto pb-20">
         {/* Welcome Section */}
-        <div className="w-full max-w-md text-center space-y-6 pt-8">
-          <div className="space-y-2">
-            <h1 className="text-3xl font-bold text-foreground">Calma</h1>
-            <p className="text-muted-foreground text-sm">Tu compañero de bienestar mental</p>
+        <div className="w-full max-w-md text-center space-y-8 pt-12">
+          <div className="space-y-4">
+            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 shadow-xl shadow-indigo-500/30">
+              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Calma</h1>
+            <p className="text-gray-600 text-base">Tu compañero de bienestar mental</p>
           </div>
           
           <div className="space-y-4 text-left">
-            <div className="bg-secondary/50 rounded-lg p-4 space-y-2">
-              <h2 className="font-semibold text-foreground">¿Cómo puedo ayudarte?</h2>
-              <p className="text-sm text-muted-foreground">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg shadow-indigo-100/50 border border-indigo-100 space-y-3">
+              <h2 className="font-semibold text-indigo-900 text-lg">¿Cómo puedo ayudarte?</h2>
+              <p className="text-sm text-gray-600">
                 Puedo ayudarte a encontrar especialistas en salud mental y proporcionarte información sobre:
               </p>
-              <ul className="text-sm text-muted-foreground space-y-1 ml-4">
-                <li>• Búsqueda de psicólogos y terapeutas</li>
-                <li>• Manejo de ansiedad y estrés</li>
-                <li>• Técnicas de relajación</li>
-                <li>• Recursos de apoyo emocional</li>
+              <ul className="text-sm text-gray-600 space-y-2 ml-1">
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                  Búsqueda de psicólogos y terapeutas
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  Manejo de ansiedad y estrés
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                  Técnicas de relajación
+                </li>
+                <li className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                  Recursos de apoyo emocional
+                </li>
               </ul>
             </div>
           </div>
         </div>
 
         {/* Voice Assistant Widget - Positioned at bottom center */}
-        <div className="w-full max-w-md flex flex-col items-center gap-4 pb-4">
-          <p className="text-sm text-muted-foreground text-center">
-            Presiona el botón para hablar conmigo
+        <div className="w-full max-w-md flex flex-col items-center gap-3 pb-4">
+          <p className="text-sm text-indigo-600 font-medium text-center">
+            👋 Presiona el botón para hablar conmigo
           </p>
           <div className="flex justify-center items-center w-full">
             <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>

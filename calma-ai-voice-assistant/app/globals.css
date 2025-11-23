@@ -4,26 +4,26 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Calma Zen Color Palette */
+  /* Calma Modern Blue Palette - Inspired by ElevenLabs */
   --background: #ffffff;
-  --foreground: #2c2c2c;
+  --foreground: #1a1a2e;
   --card: #ffffff;
-  --card-foreground: #2c2c2c;
+  --card-foreground: #1a1a2e;
   --popover: #ffffff;
-  --popover-foreground: #2c2c2c;
-  --primary: #1b4b5f;
+  --popover-foreground: #1a1a2e;
+  --primary: #4f46e5;
   --primary-foreground: #ffffff;
-  --secondary: #f5f5f5;
-  --secondary-foreground: #2c2c2c;
-  --muted: #e0e0e0;
-  --muted-foreground: #8b8b8b;
-  --accent: #82a7bd;
+  --secondary: #f8f9ff;
+  --secondary-foreground: #1a1a2e;
+  --muted: #e8eaff;
+  --muted-foreground: #6b7280;
+  --accent: #6366f1;
   --accent-foreground: #ffffff;
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.577 0.245 27.325);
-  --border: #e5e5e5;
-  --input: #f9f9f9;
-  --ring: #82a7bd;
+  --border: #e0e7ff;
+  --input: #f8f9ff;
+  --ring: #6366f1;
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -143,17 +143,17 @@ elevenlabs-convai::part(container) {
 
 /* Style the widget button to be more compact */
 elevenlabs-convai::part(button) {
-  width: 80px !important;
-  height: 80px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  width: 60px !important;
+  height: 60px !important;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3) !important;
   border-radius: 50% !important;
-  background: linear-gradient(135deg, var(--primary), var(--accent)) !important;
+  background: linear-gradient(135deg, #6366f1, #818cf8) !important;
   transition: all 0.3s ease !important;
 }
 
 elevenlabs-convai::part(button):hover {
-  transform: scale(1.05) !important;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2) !important;
+  transform: scale(1.08) !important;
+  box-shadow: 0 12px 32px rgba(99, 102, 241, 0.4) !important;
 }
 
 /* Adjust chat panel positioning */

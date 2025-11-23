@@ -70,3 +70,4 @@ out/
 calma-ai-voice-assistant/node_modules/
 calma-ai-voice-assistant/.next/
 calma-ai-voice-assistant/out/
+.vercel
