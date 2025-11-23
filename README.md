@@ -1,4 +1,4 @@
-# Calma AI - Mental Health Voice Assistant
+# Calma AI - Mental Health Voice Assistant 🍃🧘
 
 ## Demo
 
