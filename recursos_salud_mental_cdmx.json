@@ -1,0 +1,2062 @@
+[
+  {
+    "id": "psi_001",
+    "nombre": "Dra. Carolina Vega Bastida",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psiquiatra",
+    "institucion": "R&A Psicólogos",
+    "descripcion": "Psiquiatra especializado en Trastorno Bipolar, Trastornos de Ansiedad, Depresión",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Benito Juárez",
+      "colonia": "Del Valle Centro",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3923",
+      "longitud": "-99.1627",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 1200.0,
+      "descripcion": "$1,200 MXN por sesión",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Trastorno Bipolar",
+      "Trastornos de Ansiedad",
+      "Depresión",
+      "TDAH",
+      "Trastornos del Sueño",
+      "Trastornos Psicóticos",
+      "Trastornos de Personalidad"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-1234-5678",
+      "email": "contacto@ryapsicologos.net",
+      "website": "www.ryapsicologos.net"
+    },
+    "rating": 4.9,
+    "resenas": 344,
+    "disponibilidad": "Lunes a Viernes 9:00 - 17:30",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psiquiatra presencial trastorno_bipolar ansiedad depresion tdah del_valle cdmx adultos adolescentes costo_alto especialista",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_002",
+    "nombre": "Dr. Víctor Saúl Ramos Tafoya",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psiquiatra / Psiquiatra Infantil",
+    "institucion": "Centro RenaSer Salud y Bienestar Integral",
+    "descripcion": "Psiquiatra / Psiquiatra Infantil especializado en Esquizofrenia, Depresión, Trastornos de Ansiedad",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Coyoacán",
+      "colonia": "Parque San Andrés",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3427",
+      "longitud": "-99.1620",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 1300.0,
+      "descripcion": "$1,300 MXN por sesión",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Esquizofrenia",
+      "Depresión",
+      "Trastornos de Ansiedad",
+      "Psiquiatría Infantil",
+      "TDAH",
+      "Trastornos del Comportamiento"
+    ],
+    "grupo_etario": [
+      "Niños",
+      "Adolescentes",
+      "Adultos"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-5587-3400",
+      "email": "contacto@renaser.com.mx",
+      "website": "www.renaser.com.mx"
+    },
+    "rating": 4.8,
+    "resenas": 287,
+    "disponibilidad": "Lunes a Viernes 9:00 - 18:00",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia",
+      "Seguros"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psiquiatra presencial esquizofrenia depresion ansiedad infantil ninos adolescentes coyoacan cdmx costo_alto",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_003",
+    "nombre": "Dra. Diana Helena Ramírez Carrizales",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psiquiatra / Psiquiatra Infantil",
+    "institucion": "Consultorio Privado",
+    "descripcion": "Psiquiatra / Psiquiatra Infantil especializado en Espectro Autista, TDAH, Psiquiatría Infantil",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Juárez",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.4281",
+      "longitud": "-99.1385",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 1250.0,
+      "descripcion": "Consulta presencial $1,500 / Consulta online $1,000",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Espectro Autista",
+      "TDAH",
+      "Psiquiatría Infantil",
+      "Psicoterapia",
+      "Certificación en Detección de Autismo",
+      "Mascotas de Apoyo Emocional"
+    ],
+    "grupo_etario": [
+      "Niños",
+      "Adolescentes",
+      "Adultos"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-2156-8834",
+      "email": "diana.ramirez@psy.mx",
+      "website": "www.especialistasautismo.mx"
+    },
+    "rating": 4.9,
+    "resenas": 412,
+    "disponibilidad": "Lunes a Viernes 8:30 - 19:00, Sábado 9:00 - 13:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia",
+      "Seguros"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psiquiatra autismo tdah infantil ninos adolescentes online presencial cuauhtemoc cdmx especialista_diagnostico",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_004",
+    "nombre": "Mtro. Narciso Castañeda Téllez",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicólogo Clínico",
+    "institucion": "Orientación Psicológica SUD",
+    "descripcion": "Psicólogo Clínico especializado en Terapia Cognitivo Conductual, EMDR (Eye Movement Desensitization and Reprocessing), Trastornos de Ansiedad",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Hipódromo",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.4265",
+      "longitud": "-99.1570",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 492.5,
+      "descripcion": "$450 - $535 MXN por sesión",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Terapia Cognitivo Conductual",
+      "EMDR (Eye Movement Desensitization and Reprocessing)",
+      "Trastornos de Ansiedad",
+      "Depresión",
+      "Trauma"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-4167-2945",
+      "email": "narciso.castaneda@psy.mx",
+      "website": "www.orientacionpsicologicasud.com.mx"
+    },
+    "rating": 4.8,
+    "resenas": 289,
+    "disponibilidad": "Lunes a Viernes 9:00 - 18:00",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologo presencial tcc emdr ansiedad depresion trauma hipodromo cuauhtemoc cdmx costo_medio especialista",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_005",
+    "nombre": "Lic. Lili Marlen Enríquez Nava",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga Clínica",
+    "institucion": "Consultorio Privado",
+    "descripcion": "Psicóloga Clínica especializado en Trastornos de Ansiedad, Depresión, Adicciones",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Coyoacán",
+      "colonia": "Coyoacán",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3444",
+      "longitud": "-99.1627",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 750.0,
+      "descripcion": "Sesión regular $600 MXN / Asistencia en crisis $900 MXN",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Trastornos de Ansiedad",
+      "Depresión",
+      "Adicciones",
+      "Psicología Clínica",
+      "Intervención en Crisis",
+      "Terapia Individual"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-5659-7834",
+      "email": "lili.enriquez@psico.mx",
+      "website": "www.consultorilili.mx"
+    },
+    "rating": 4.7,
+    "resenas": 198,
+    "disponibilidad": "Lunes a Viernes 10:00 - 19:00, Sábado 10:00 - 14:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologa presencial ansiedad depresion adicciones crisis coyoacan cdmx costo_medio adultos",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_006",
+    "nombre": "Dr. Mauricio Ramírez Castillo",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicólogo / Psicoanalista",
+    "institucion": "Consultorio San José Insurgentes",
+    "descripcion": "Psicólogo / Psicoanalista especializado en Trastornos de Ansiedad, Depresión, Psicoanálisis",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Benito Juárez",
+      "colonia": "San José Insurgentes",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3621",
+      "longitud": "-99.1794",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 1000.0,
+      "descripcion": "$1,000 MXN por sesión",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Trastornos de Ansiedad",
+      "Depresión",
+      "Psicoanálisis",
+      "Psicología Clínica",
+      "Duelo",
+      "Psicoterapia Individual"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-5687-4923",
+      "email": "mauricio.ramirez@psicoanalisis.mx",
+      "website": "www.consultorioramirez.mx"
+    },
+    "rating": 4.8,
+    "resenas": 356,
+    "disponibilidad": "Lunes a Viernes 9:00 - 20:00",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologo presencial psicoanalista ansiedad depresion duelo benito_juarez cdmx costo_alto adultos",
+    "tipo_servicio": null
+  },
+  {
+    "id": "psi_007",
+    "nombre": "Mtro. Carlos Alfonso Díaz Dorantes",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicólogo",
+    "institucion": "Bienestar Coapa",
+    "descripcion": "Psicólogo especializado en Duelo, Psicoterapia de Pareja, Psicooncología",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Tlalpan",
+      "colonia": "Toriello Guerra",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.2957",
+      "longitud": "-99.1703",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 550.0,
+      "descripcion": "Consulta presencial $600 / Consulta online $500",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Duelo",
+      "Psicoterapia de Pareja",
+      "Psicooncología",
+      "Terapia Cognitivo Conductual",
+      "Terapia Individual",
+      "Manejo del Estrés"
+    ],
+    "grupo_etario": [
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-5645-3267",
+      "email": "carlos.diaz@bienestarcoapa.mx",
+      "website": "www.bienestarcoapa.mx"
+    },
+    "rating": 4.7,
+    "resenas": 245,
+    "disponibilidad": "Lunes a Sábado 9:00 - 19:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologo presencial online duelo pareja psicooncologia tcc tlalpan cdmx costo_bajo_medio adultos",
+    "tipo_servicio": null
+  },
+  {
+    "id": "online_001",
+    "nombre": "CAPI - Clínica de Atención Psicológica Integral",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Multidisciplinario (Psicólogos, Psiquiatras)",
+    "institucion": "CAPI Psicólogos",
+    "descripcion": "Multidisciplinario (Psicólogos, Psiquiatras) especializado en Terapia Individual, Terapia de Pareja, Terapia Familiar",
+    "modalidad": "Online / Presencial",
+    "ubicacion": {
+      "delegacion": "Varias",
+      "colonia": "Múltiples sedes",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3910",
+      "longitud": "-99.1340",
+      "modalidad": "Online / Presencial"
+    },
+    "costo": {
+      "promedio": 650.0,
+      "descripcion": "Rango variable según especialista $400 - $900 MXN",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Terapia Individual",
+      "Terapia de Pareja",
+      "Terapia Familiar",
+      "Terapia de Lenguaje",
+      "Apoyo Psicológico",
+      "Talleres y Pláticas",
+      "Niños, Adolescentes y Adultos"
+    ],
+    "grupo_etario": [
+      "Niños",
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Mixto",
+    "contacto": {
+      "telefono": "55-5687-2938",
+      "email": "contacto@capisicologos.com.mx",
+      "website": "www.capisicologos.com.mx"
+    },
+    "rating": 4.8,
+    "resenas": 523,
+    "disponibilidad": "Lunes a Viernes 9:00 - 21:00, Sábado 9:00 - 15:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Tarjeta",
+      "Transferencia",
+      "PayPal"
+    ],
+    "es_emergencia": false,
+    "tags_match": "online plataforma multidisciplinario terapia_individual pareja familia ninos adolescentes adultos costo_bajo_medio accesible",
+    "tipo_servicio": null
+  },
+  {
+    "id": "online_002",
+    "nombre": "Calm (Versión Gratuita + Premium)",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Herramienta Digital / App",
+    "institucion": "Calm Inc.",
+    "descripcion": "Herramienta Digital / App especializado en Meditación Guiada, Relajación, Manejo del Estrés",
+    "modalidad": "Online / App Móvil",
+    "ubicacion": {
+      "delegacion": "N/A",
+      "colonia": "Global",
+      "ciudad": "Online",
+      "latitud": "0.0",
+      "longitud": "0.0",
+      "modalidad": "Online / App Móvil"
+    },
+    "costo": {
+      "promedio": 99,
+      "descripcion": "Freemium: Acceso gratis con contenido limitado / Premium: $99 MXN/mes",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Meditación Guiada",
+      "Relajación",
+      "Manejo del Estrés",
+      "Insomnio",
+      "Respiración",
+      "Yoga",
+      "Mindfulness"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "N/A",
+    "contacto": {
+      "telefono": "N/A",
+      "email": "support@calm.com",
+      "website": "www.calm.com"
+    },
+    "rating": 4.6,
+    "resenas": 125000,
+    "disponibilidad": "24/7",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Tarjeta",
+      "Suscripción App Store"
+    ],
+    "es_emergencia": false,
+    "tags_match": "app herramienta digital meditacion relajacion estrés insomnio yoga mindfulness freemium autoayuda accesible gratuito",
+    "tipo_servicio": null
+  },
+  {
+    "id": "emerg_001",
+    "nombre": "Línea de la Vida",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Servicio de Emergencia / Crisis",
+    "institucion": "Secretaría de Salud - Gobierno de México",
+    "descripcion": "Servicio de Emergencia / Crisis especializado en Ideación Suicida, Crisis Emocional, Emergencia Mental",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "Nacional",
+      "colonia": "Nacional",
+      "ciudad": "México",
+      "latitud": "19.4285",
+      "longitud": "-99.1277",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "Completamente Gratuito",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Ideación Suicida",
+      "Crisis Emocional",
+      "Emergencia Mental",
+      "Apoyo Inmediato",
+      "Contención Emocional",
+      "Orientación"
+    ],
+    "grupo_etario": [
+      "Todos"
+    ],
+    "genero_especialista": "Mixto",
+    "contacto": {
+      "telefono": "800-911-2000",
+      "email": "N/A",
+      "website": "www.gob.mx/salud"
+    },
+    "rating": 4.9,
+    "resenas": 34500,
+    "disponibilidad": "24 horas, 7 días a la semana",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "emergencia crisis suicidio ideacion telefonico gratuito 24h ayuda_inmediata nacional urgente",
+    "tipo_servicio": null
+  },
+  {
+    "id": "emerg_002",
+    "nombre": "Hospital Psiquiátrico Morelos",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Hospital Psiquiátrico",
+    "institucion": "Sistema de Salud UNAM",
+    "descripcion": "Hospital Psiquiátrico especializado en Crisis Psiquiátrica, Hospitalización Psiquiátrica, Evaluación de Riesgo",
+    "modalidad": "Emergencia / Hospitalización",
+    "ubicacion": {
+      "delegacion": "Gustavo A. Madero",
+      "colonia": "San Pedro el Chico",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.5012",
+      "longitud": "-99.0928",
+      "modalidad": "Emergencia / Hospitalización"
+    },
+    "costo": {
+      "promedio": 2650.0,
+      "descripcion": "Costo variable según tipo de atención y cobertura de seguros",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Crisis Psiquiátrica",
+      "Hospitalización Psiquiátrica",
+      "Evaluación de Riesgo",
+      "Intento de Suicidio",
+      "Psicosis Aguda",
+      "Intoxicación"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Mixto",
+    "contacto": {
+      "telefono": "55-5577-6043",
+      "email": "admisiones@hpsmorelos.gob.mx",
+      "website": "www.hpsmorelos.gob.mx"
+    },
+    "rating": 4.5,
+    "resenas": 234,
+    "disponibilidad": "Atención 24/7",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Seguros",
+      "IMSS/ISSSTE"
+    ],
+    "es_emergencia": false,
+    "tags_match": "hospital emergencia crisis hospitalizacion psiquiatrico suicidio psicosis gustavo_madero cdmx urgente",
+    "tipo_servicio": null
+  },
+  {
+    "id": "esp_001",
+    "nombre": "Mtra. Luz Marina Casas",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga / Neuropsicóloga",
+    "institucion": "Centro de Neuropsicología",
+    "descripcion": "Psicóloga / Neuropsicóloga especializado en Neuropsicología, EMDR (Desensibilización por Movimientos Oculares), Terapia Breve Centrada en Soluciones",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Condesa",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.4244",
+      "longitud": "-99.1781",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 750.0,
+      "descripcion": "Evaluación $900 / Terapia $600",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Neuropsicología",
+      "EMDR (Desensibilización por Movimientos Oculares)",
+      "Terapia Breve Centrada en Soluciones",
+      "Psicoterapia Individual",
+      "Evaluación Neuropsicológica",
+      "Trauma"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-2145-6789",
+      "email": "luz.casas@neuro-psy.mx",
+      "website": "www.neuropsicologiacasas.mx"
+    },
+    "rating": 4.9,
+    "resenas": 401,
+    "disponibilidad": "Lunes a Viernes 8:30 - 19:00, Sábado 9:00 - 14:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologa neuropsicologia emdr trauma terapia_breve condesa cuauhtemoc cdmx especialista_diagnostico",
+    "tipo_servicio": null
+  },
+  {
+    "id": "esp_002",
+    "nombre": "Lic. Jessica Yokonda Diaz Gomez",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga / Sexóloga",
+    "institucion": "Centro de Sexología Clínica",
+    "descripcion": "Psicóloga / Sexóloga especializado en Trastornos de Ansiedad, Trastornos Sexuales, Trastornos de Pareja",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Cuauhtémoc",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.4307",
+      "longitud": "-99.1509",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 650.0,
+      "descripcion": "Terapia sexual $500 - $800 MXN",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Trastornos de Ansiedad",
+      "Trastornos Sexuales",
+      "Trastornos de Pareja",
+      "Trastornos Psicosomáticos",
+      "Sexología Clínica",
+      "Disfunciones Sexuales",
+      "Terapia Sexual"
+    ],
+    "grupo_etario": [
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-4512-3456",
+      "email": "jessica.diaz@sexologia.mx",
+      "website": "www.sexologiaclinica.mx"
+    },
+    "rating": 4.8,
+    "resenas": 267,
+    "disponibilidad": "Lunes a Viernes 10:00 - 18:00",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologa sexologa sexual pareja ansiedad psicosomatico cuauhtemoc cdmx especialista adultos",
+    "tipo_servicio": null
+  },
+  {
+    "id": "esp_003",
+    "nombre": "Lic. Carlos Salazar",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicólogo / Tanatólogo",
+    "institucion": "Psicología y Tanatología CDMX",
+    "descripcion": "Psicólogo / Tanatólogo especializado en Tanatología, Duelo, Psicoterapia Individual",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Gustavo A. Madero",
+      "colonia": "Guadalupe Tepeyac",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.5134",
+      "longitud": "-99.0953",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 900.0,
+      "descripcion": "$900 MXN por sesión",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Tanatología",
+      "Duelo",
+      "Psicoterapia Individual",
+      "Psicoterapia de Pareja",
+      "Desarrollo Humano",
+      "Pérdida y Duelo",
+      "Aceptación del Fallecimiento"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-6234-5678",
+      "email": "carlos.salazar@tanatologia.mx",
+      "website": "www.tanatologiaypsicologia.mx"
+    },
+    "rating": 4.9,
+    "resenas": 378,
+    "disponibilidad": "Lunes a Viernes 9:00 - 20:00, Sábado 9:00 - 13:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia"
+    ],
+    "es_emergencia": false,
+    "tags_match": "psicologo tanatologia duelo perdida desarrollo_humano Gustav_A_Madero cdmx especialista adultos",
+    "tipo_servicio": null
+  },
+  {
+    "id": "pub_001",
+    "nombre": "Clínica de Salud Mental - UNAM",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Multidisciplinario (Psiquiatras, Psicólogos, Trabajadores Sociales)",
+    "institucion": "Facultad de Medicina UNAM",
+    "descripcion": "Multidisciplinario (Psiquiatras, Psicólogos, Trabajadores Sociales) especializado en Psiquiatría General, Psicología Clínica, Trabajo Social",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Coyoacán",
+      "colonia": "Ciudad Universitaria",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3356",
+      "longitud": "-99.1865",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 300.0,
+      "descripcion": "Costo reducido según capacidad de pago ($100 - $500 MXN)",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Psiquiatría General",
+      "Psicología Clínica",
+      "Trabajo Social",
+      "Evaluación Diagnostica",
+      "Psicoterapia Individual",
+      "Psicofarmacología"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Mixto",
+    "contacto": {
+      "telefono": "55-5623-2500",
+      "email": "clinicasalud@facmed.unam.mx",
+      "website": "psiquiatria.facmed.unam.mx"
+    },
+    "rating": 4.6,
+    "resenas": 512,
+    "disponibilidad": "Lunes a Viernes 8:45 - 16:45",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Cuota Escala",
+      "Efectivo"
+    ],
+    "es_emergencia": false,
+    "tags_match": "publico clinica unam accesible bajo_costo multidisciplinario psiquiatria psicologia ciudad_universitaria coyoacan cdmx",
+    "tipo_servicio": null
+  },
+  {
+    "id": "pub_002",
+    "nombre": "Hospital Psiquiátrico Dr. Héctor H. Tovar Acosta",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Hospital Psiquiátrico Público",
+    "institucion": "Sistema de Salud UNAM",
+    "descripcion": "Hospital Psiquiátrico Público especializado en Crisis Psiquiátrica, Hospitalización, Psiquiatría de Emergencia",
+    "modalidad": "Emergencia / Hospitalización",
+    "ubicacion": {
+      "delegacion": "Tlalpan",
+      "colonia": "Toriello Guerra",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.2936",
+      "longitud": "-99.1778",
+      "modalidad": "Emergencia / Hospitalización"
+    },
+    "costo": {
+      "promedio": 1000,
+      "descripcion": "Gratuito para IMSS/ISSSTE, costo reducido para población abierta",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Crisis Psiquiátrica",
+      "Hospitalización",
+      "Psiquiatría de Emergencia",
+      "Evaluación Diagnóstica",
+      "Intento de Suicidio",
+      "Trastornos Psicóticos"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Mixto",
+    "contacto": {
+      "telefono": "55-5606-2165",
+      "email": "admisiones@hptovar.gob.mx",
+      "website": "www.hptovar.gob.mx"
+    },
+    "rating": 4.4,
+    "resenas": 189,
+    "disponibilidad": "Atención 24/7",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "IMSS/ISSSTE",
+      "Cuota Escala",
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "hospital publico emergencia crisis hospitalización psiquiatrico gratuito accesible tlalpan cdmx urgente",
+    "tipo_servicio": null
+  },
+  {
+    "id": "srv_001",
+    "nombre": "Línea de la Vida",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Línea de Crisis Teléfonica",
+    "institucion": "Secretaría de Salud CDMX / CONASAMA",
+    "descripcion": "Sistema Nacional de Apoyo, Consejo Psicológico e Intervención en Crisis. Servicio de atención telefónica 24/7 para personas en crisis suicida, emocional o en emergencia psicológica.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "Nacional",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Crisis suicida",
+      "Prevención de suicidio",
+      "Contención emocional"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "800-911-2000",
+      "email": null,
+      "website": "www.saptel.org.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "24/7 | 365 días al año",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": true,
+    "tags_match": "línea de la vida línea de crisis teléfonica crisis suicida prevención de suicidio contención emocional",
+    "tipo_servicio": "Línea de Crisis Teléfonica",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_002",
+    "nombre": "LOCATEL - Orientación Psicológica",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Línea de Orientación Teléfonica",
+    "institucion": "Secretaría de Seguridad Ciudadana CDMX",
+    "descripcion": "Servicio de orientación profesional, psicológica, médica y legal. Confidencial y disponible 24/7.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Orientación psicológica",
+      "Asesoría legal",
+      "Asesoría médica"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "01-55-5025-0855",
+      "email": "[email protected]",
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "24/7 | 365 días al año",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": true,
+    "tags_match": "locatel - orientación psicológica línea de orientación teléfonica orientación psicológica asesoría legal asesoría médica",
+    "tipo_servicio": "Línea de Orientación Teléfonica",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_003",
+    "nombre": "SAPTEL - Centro Telefónico ENEO",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro Telefónico de Atención",
+    "institucion": "ENEO - Escuela Nacional de Enfermería y Obstetricia (UNAM)",
+    "descripcion": "Atención de primer contacto en casos de estrés agudo, ansiedad, depresión y riesgo suicida. Brinda intervenciones a distancia vía telefónica, WhatsApp y videollamadas.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono / WhatsApp / Videollamadas"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Estrés",
+      "Ansiedad",
+      "Depresión",
+      "Duelo",
+      "Prevención suicidio"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5826-1859",
+      "email": "[email protected]",
+      "website": "https://www.eneo.unam.mx",
+      "whatsapp": "Disponible"
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes a Viernes 8:00-18:00 hrs",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "saptel - centro telefónico eneo centro telefónico de atención estrés ansiedad depresión duelo prevención suicidio",
+    "tipo_servicio": "Centro Telefónico de Atención",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_004",
+    "nombre": "CECOSAMA Portales",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro Comunitario de Salud Mental",
+    "institucion": "Secretaría de Salud CDMX",
+    "descripcion": "Centro de atención integral para prevención y tratamiento de salud mental y consumo de sustancias psicoactivas.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Benito Juárez",
+      "colonia": "Portales",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.388",
+      "longitud": "-99.175",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Depresión",
+      "Ansiedad",
+      "Adicciones",
+      "Estrés"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5672-7567",
+      "email": null,
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes: 8:00-20:00 hrs | Sab-Dom: 9:00-17:00 hrs",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "cecosama portales centro comunitario de salud mental depresión ansiedad adicciones estrés",
+    "tipo_servicio": "Centro Comunitario de Salud Mental",
+    "servicios_ofrecidos": [
+      "Atención psicológica",
+      "Atención psiquiátrica",
+      "Evaluación de adicciones",
+      "Talleres preventivos",
+      "Orientación familiar"
+    ]
+  },
+  {
+    "id": "srv_005",
+    "nombre": "CECOSAMA Santa María la Rivera",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro Comunitario de Salud Mental",
+    "institucion": "Secretaría de Salud CDMX",
+    "descripcion": "Centro de atención integral con servicios de psiquiatría, psicología y paidopsiquiatría infantil.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Santa María la Rivera",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.424",
+      "longitud": "-99.189",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Depresión",
+      "Ansiedad",
+      "Adicciones",
+      "Psicosis"
+    ],
+    "grupo_etario": [
+      "Niños",
+      "Adolescentes",
+      "Adultos"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5541-4401 ext. 103-104",
+      "email": null,
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes: 8:00-20:00 hrs | Sab-Dom: 8:00-16:00 hrs",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "cecosama santa maría la rivera centro comunitario de salud mental depresión ansiedad adicciones psicosis",
+    "tipo_servicio": "Centro Comunitario de Salud Mental",
+    "servicios_ofrecidos": [
+      "Psiquiatría adultos",
+      "Paidopsiquiatría (menores)",
+      "Atención psicológica",
+      "Evaluación diagnóstica"
+    ]
+  },
+  {
+    "id": "srv_006",
+    "nombre": "CECOSAMA Iztapalapa",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro Comunitario de Salud Mental",
+    "institucion": "Secretaría de Salud CDMX",
+    "descripcion": "Centro especializado en atención de salud mental y prevención de adicciones en Iztapalapa.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Iztapalapa",
+      "colonia": "Leyes de Reforma 3ra Sección",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.363",
+      "longitud": "-99.099",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Depresión",
+      "Ansiedad",
+      "Adicciones",
+      "Estrés laboral"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5006-2170 ext. 50118-50109",
+      "email": null,
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes: 8:00-20:00 hrs | Sab-Dom: 8:00-16:00 hrs",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "cecosama iztapalapa centro comunitario de salud mental depresión ansiedad adicciones estrés laboral",
+    "tipo_servicio": "Centro Comunitario de Salud Mental",
+    "servicios_ofrecidos": [
+      "Psiquiatría",
+      "Psicología clínica",
+      "Evaluación de riesgos psicosociales"
+    ]
+  },
+  {
+    "id": "srv_007",
+    "nombre": "Línea de Atención Psicológica UNAM (Facultad de Psicología)",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Línea Telefónica de Atención",
+    "institucion": "Facultad de Psicología - UNAM",
+    "descripcion": "Programa de atención psicológica a distancia de la Facultad de Psicología UNAM. NO requiere ser estudiante ni de CDMX.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "Nacional",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Atención psicológica general",
+      "Orientación"
+    ],
+    "grupo_etario": [
+      "Todas las personas"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5025-0855",
+      "email": null,
+      "website": "www.psicologia.unam.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes 9:00-18:00 hrs",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "línea de atención psicológica unam (facultad de psicología) línea telefónica de atención atención psicológica general orientación",
+    "tipo_servicio": "Línea Telefónica de Atención",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_008",
+    "nombre": "FES Zaragoza - Clínicas Universitarias",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro de Atención Presencial",
+    "institucion": "FES Zaragoza - UNAM",
+    "descripcion": "7 clínicas universitarias (6 en Nezahualcóyotl, 1 en Los Reyes La Paz) que ofrecen atención psicológica integral a la comunidad y universitarios.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Área Metropolitana",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO O REDUCIDO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Depresión",
+      "Ansiedad",
+      "Trastornos psicológicos",
+      "Estrés traumático"
+    ],
+    "grupo_etario": [
+      "Comunidad general",
+      "Universitarios"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5623-0614",
+      "email": "psicologica@zaragoza.unam.mx",
+      "website": "www.zaragoza.unam.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes 9:00-18:00 hrs (consultar por ubicación)",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "fes zaragoza - clínicas universitarias centro de atención presencial depresión ansiedad trastornos psicológicos estrés traumático",
+    "tipo_servicio": "Centro de Atención Presencial",
+    "servicios_ofrecidos": [
+      "Atención psicológica",
+      "Evaluación psicológica",
+      "Terapia individual",
+      "Atención en crisis"
+    ]
+  },
+  {
+    "id": "srv_009",
+    "nombre": "NUBE Cuauhtémoc - Centro de Cuidado de las Emociones",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro de Atención para Jóvenes",
+    "institucion": "Instituto de Atención Pediátrica - IAPA CDMX",
+    "descripcion": "Centro de Atención Emocional para jóvenes (12-29 años). Atención a problemas emocionales, familiares, de pareja, ansiedad, depresión e ideación suicida.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Centro Histórico",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Ansiedad",
+      "Depresión",
+      "Problemas familiares",
+      "Ideación suicida"
+    ],
+    "grupo_etario": [
+      "Jóvenes 12-29 años"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5006-2467",
+      "email": null,
+      "website": "www.iapa.cdmx.gob.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes 9:00-18:00 hrs (consultar)",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "nube cuauhtémoc - centro de cuidado de las emociones centro de atención para jóvenes ansiedad depresión problemas familiares ideación suicida",
+    "tipo_servicio": "Centro de Atención para Jóvenes",
+    "servicios_ofrecidos": [
+      "Consejería psicológica",
+      "Terapia individual",
+      "Terapia grupal",
+      "Orientación familiar",
+      "Atención de ideación suicida"
+    ]
+  },
+  {
+    "id": "srv_010",
+    "nombre": "NUBE - Ubicaciones Múltiples",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Red de Centros para Jóvenes",
+    "institucion": "Instituto de Atención Pediátrica - IAPA CDMX",
+    "descripcion": "Red de 6 centros distribuidos en CDMX: Mixcoac, Centro Histórico, Tláhuac, Santa Fe, Gustavo A. Madero y Tezonco.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "6 sedes en CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Depresión",
+      "Ansiedad",
+      "Problemas escolares",
+      "Adicciones"
+    ],
+    "grupo_etario": [
+      "Jóvenes 12-29 años"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5006-2467",
+      "email": null,
+      "website": "www.iapa.cdmx.gob.mx/vida-plena-corazon-contento",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes 9:00-18:00 hrs (varía por sede)",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "nube - ubicaciones múltiples red de centros para jóvenes depresión ansiedad problemas escolares adicciones",
+    "tipo_servicio": "Red de Centros para Jóvenes",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_011",
+    "nombre": "CIJ Red Nacional - Ubicaciones CDMX",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro de Adicciones y Prevención",
+    "institucion": "Centros de Integración Juvenil A.C.",
+    "descripcion": "Red nacional de CIJ con múltiples ubicaciones en CDMX. Brinda atención integral a problemas relacionados con consumo de cualquier droga.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Múltiples sedes en CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO O BAJO COSTO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Adicciones",
+      "Consumo de sustancias",
+      "Prevención",
+      "Riesgo psicosocial"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "01-800-008-9088",
+      "email": null,
+      "website": "www.cij.org.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Varía según sede (consultar)",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "cij red nacional - ubicaciones cdmx centro de adicciones y prevención adicciones consumo de sustancias prevención riesgo psicosocial",
+    "tipo_servicio": "Centro de Adicciones y Prevención",
+    "servicios_ofrecidos": [
+      "Evaluación diagnóstica",
+      "Terapia individual",
+      "Terapia familiar",
+      "Tratamiento residencial",
+      "Prevención"
+    ]
+  },
+  {
+    "id": "srv_012",
+    "nombre": "Línea Nacional Diversidad Segura - Consejo Cuidadano",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Línea de Apoyo Especializada",
+    "institucion": "Consejo Cuidadano A.C.",
+    "descripcion": "Apoyo psicológico y jurídico para comunidad LGBTTTI+. Prevención de suicidio, terapias a distancia, orientación ante discriminación.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "Nacional",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Apoyo LGBTTTI+",
+      "Prevención suicidio",
+      "Asesoría legal"
+    ],
+    "grupo_etario": [
+      "Comunidad LGBTTTI+"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "800-000-5428",
+      "email": null,
+      "website": "www.consejocuidadano.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "24/7 | 365 días al año",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": true,
+    "tags_match": "línea nacional diversidad segura - consejo cuidadano línea de apoyo especializada apoyo lgbttti+ prevención suicidio asesoría legal",
+    "tipo_servicio": "Línea de Apoyo Especializada",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_013",
+    "nombre": "Fundación Origen - Línea de Ayuda",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Línea de Apoyo Psicológico",
+    "institucion": "Fundación Origen A.C.",
+    "descripcion": "ONG enfocada en apoyo social a personas en situación de exclusión o desamparo. Ofrece asistencia psicológica gratuita vía telefónica.",
+    "modalidad": "Teléfono",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Teléfono"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Apoyo emocional",
+      "Contención",
+      "Orientación"
+    ],
+    "grupo_etario": [
+      "Personas en situación vulnerable"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "800-0151617",
+      "email": "[email protected]",
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes (consultar)",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "fundación origen - línea de ayuda línea de apoyo psicológico apoyo emocional contención orientación",
+    "tipo_servicio": "Línea de Apoyo Psicológico",
+    "servicios_ofrecidos": []
+  },
+  {
+    "id": "srv_014",
+    "nombre": "Consejo Cuidadano - Centros de Recuperación Emocional",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro de Atención Psicológica",
+    "institucion": "Consejo Cuidadano A.C.",
+    "descripcion": "Centros de Recuperación Emocional que ofrecen 9-12 sesiones de terapia sin costo. Atención por llamada o videollamada.",
+    "modalidad": "Presencial / Teléfono / Videollamadas",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial / Teléfono / Videollamadas"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO (9-12 SESIONES)",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Crisis emocional",
+      "Depresión",
+      "Ansiedad",
+      "Estrés"
+    ],
+    "grupo_etario": [
+      "Todas las edades"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5533-5533",
+      "email": null,
+      "website": "www.consejocuidadano.mx",
+      "whatsapp": "55-5533-5533"
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "24/7",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": true,
+    "tags_match": "consejo cuidadano - centros de recuperación emocional centro de atención psicológica crisis emocional depresión ansiedad estrés",
+    "tipo_servicio": "Centro de Atención Psicológica",
+    "servicios_ofrecidos": [
+      "Terapia psicológica",
+      "Consejería",
+      "Apoyo emocional"
+    ]
+  },
+  {
+    "id": "srv_015",
+    "nombre": "Módulo de Apoyo Psicológico Metro Juárez",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Módulo de Atención",
+    "institucion": "STC Metro / Programa Salvemos Vidas",
+    "descripcion": "Módulo de operación permanente en Metro Juárez (Línea 3) que ofrece consultas gratuitas de atención psicológica.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Crisis emocional",
+      "Ideación suicida",
+      "Apoyo inmediato"
+    ],
+    "grupo_etario": [
+      "Usuarios de Metro"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": null,
+      "email": null,
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Lunes-Viernes 10:00-18:00 hrs",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "módulo de apoyo psicológico metro juárez módulo de atención crisis emocional ideación suicida apoyo inmediato",
+    "tipo_servicio": "Módulo de Atención",
+    "servicios_ofrecidos": [
+      "Consultas psicológicas",
+      "Apoyo emocional",
+      "Orientación"
+    ]
+  },
+  {
+    "id": "srv_016",
+    "nombre": "ILEF - Instituto Latinoamericano de la Familia",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Centro de Atención Familiar",
+    "institucion": "ILEF A.C.",
+    "descripcion": "Instituto dedicado a apoyo psicológico y terapéutico familiar. Ofrece servicios a bajo costo acorde a recursos económicos.",
+    "modalidad": "Presencial",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial"
+    },
+    "costo": {
+      "promedio": 300,
+      "descripcion": "BAJO COSTO (AJUSTADO A RECURSOS)",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Problemas familiares",
+      "Conflicto de pareja",
+      "Violencia intrafamiliar"
+    ],
+    "grupo_etario": [
+      "Familias",
+      "Parejas"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": "55-5207-5648",
+      "email": null,
+      "website": null,
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Consultar",
+    "tiene_sabado": false,
+    "metodos_pago": [],
+    "es_emergencia": false,
+    "tags_match": "ilef - instituto latinoamericano de la familia centro de atención familiar problemas familiares conflicto de pareja violencia intrafamiliar",
+    "tipo_servicio": "Centro de Atención Familiar",
+    "servicios_ofrecidos": [
+      "Terapia familiar",
+      "Consejería de pareja",
+      "Atención psicológica"
+    ]
+  },
+  {
+    "id": "srv_017",
+    "nombre": "Voz Pro Salud Mental CDMX",
+    "tipo_recurso": "servicio",
+    "tipo_profesional": "Organización de Psicoeducación",
+    "institucion": "Voz Pro Salud Mental CDMX A.C.",
+    "descripcion": "Organización sin fines de lucro dedicada a psicoeducación para personas diagnosticadas con trastorno mental y sus familias.",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "CDMX",
+      "colonia": "",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 0,
+      "descripcion": "GRATUITO / BAJO COSTO",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Trastornos mentales",
+      "Psicoeducación",
+      "Prevención de estigma"
+    ],
+    "grupo_etario": [
+      "Personas con trastorno mental",
+      "Familias"
+    ],
+    "genero_especialista": null,
+    "contacto": {
+      "telefono": null,
+      "email": null,
+      "website": "www.vozprosaludmental.org.mx",
+      "whatsapp": null
+    },
+    "rating": 4.5,
+    "resenas": 0,
+    "disponibilidad": "Consultar",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Gratuito"
+    ],
+    "es_emergencia": false,
+    "tags_match": "voz pro salud mental cdmx organización de psicoeducación trastornos mentales psicoeducación prevención de estigma",
+    "tipo_servicio": "Organización de Psicoeducación",
+    "servicios_ofrecidos": [
+      "Talleres psicoeducativos",
+      "Grupos de apoyo",
+      "Orientación familiar"
+    ]
+  },
+  {
+    "id": "crisis_001",
+    "nombre": "Dr. Roberto Sánchez - Especialista en Crisis",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psiquiatra de Emergencias",
+    "institucion": "Centro de Intervención en Crisis CDMX",
+    "descripcion": "Psiquiatra especializado en atención de crisis, ideación suicida, y emergencias psiquiátricas. Disponible 24/7 para casos urgentes.",
+    "modalidad": "Presencial / Online / Telefónico",
+    "ubicacion": {
+      "delegacion": "Cuauhtémoc",
+      "colonia": "Doctores",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.4215",
+      "longitud": "-99.1449",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 800.0,
+      "cantidad_min": 0,
+      "cantidad_max": 1500,
+      "descripcion": "$0-$1,500 (Según disponibilidad económica - NADIE es rechazado)",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Ideación Suicida",
+      "Crisis Psicológicas",
+      "Trastornos de Ansiedad Agudos",
+      "Depresión Severa",
+      "Ataques de Pánico",
+      "Psicosis",
+      "Intervención en Crisis"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-9876-5432",
+      "telefono_emergencia": "55-9876-5432 (24/7)",
+      "email": "crisis@centroemergenciascdmx.org",
+      "website": "www.centroemergenciascdmx.org",
+      "whatsapp": "55-9876-5432"
+    },
+    "rating": 4.9,
+    "resenas": 127,
+    "disponibilidad": "24/7 - Disponibilidad inmediata para emergencias",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia",
+      "Seguro",
+      "Escala móvil de pagos"
+    ],
+    "es_emergencia": true,
+    "tags_match": "crisis ideación suicida emergencia psiquiátrica depresión severa pánico psicosis intervención urgente 24/7",
+    "tipo_servicio": "Atención de Emergencias Psiquiátricas",
+    "servicios_ofrecidos": [
+      "Evaluación de riesgo suicida",
+      "Estabilización en crisis",
+      "Manejo de emergencias",
+      "Hospitalización si necesario",
+      "Seguimiento post-crisis"
+    ],
+    "atencion_inmediata": true,
+    "acepta_seguros": true
+  },
+  {
+    "id": "crisis_002",
+    "nombre": "Dra. Patricia Morales - Psicóloga de Crisis",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga Clínica Especialista en Crisis",
+    "institucion": "Red de Apoyo en Crisis",
+    "descripcion": "Psicóloga clínica con especialización en intervención en crisis y prevención del suicidio. Atención cálida y profesional en momentos difíciles.",
+    "modalidad": "Online / Telefónico",
+    "ubicacion": {
+      "delegacion": "Benito Juárez",
+      "colonia": "Narvarte",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3978",
+      "longitud": "-99.1521",
+      "modalidad": "Online"
+    },
+    "costo": {
+      "promedio": 500.0,
+      "cantidad_min": 0,
+      "cantidad_max": 800,
+      "descripcion": "GRATUITO para crisis aguda / $500-$800 sesiones regulares",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Ideación Suicida",
+      "Crisis Emocionales",
+      "Duelo Complicado",
+      "Trauma Agudo",
+      "Ataques de Pánico",
+      "Ansiedad Severa",
+      "Terapia de Contención"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Jóvenes"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-3456-7890",
+      "telefono_emergencia": "55-3456-7890 (Lun-Dom 8am-12am)",
+      "email": "pmorales@redapoyocrisis.org",
+      "website": "www.redapoyocrisis.org",
+      "whatsapp": "55-3456-7890"
+    },
+    "rating": 4.8,
+    "resenas": 89,
+    "disponibilidad": "Lunes a Domingo 8:00-24:00 (Horario extendido para crisis)",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Gratuito para crisis",
+      "Efectivo",
+      "Transferencia",
+      "PayPal"
+    ],
+    "es_emergencia": true,
+    "tags_match": "crisis ideación suicida emergencia psicológica trauma duelo pánico contención online gratuito",
+    "tipo_servicio": "Psicología de Emergencias",
+    "servicios_ofrecidos": [
+      "Primera sesión gratuita en crisis",
+      "Terapia de contención",
+      "Evaluación de riesgo",
+      "Plan de seguridad personalizado",
+      "Referencias a servicios médicos"
+    ],
+    "atencion_inmediata": true,
+    "idiomas": ["Español", "Inglés"]
+  },
+  {
+    "id": "crisis_003",
+    "nombre": "Dr. Miguel Ángel Torres - Psiquiatra Jóvenes",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psiquiatra Infanto-Juvenil",
+    "institucion": "Clínica Esperanza",
+    "descripcion": "Psiquiatra especializado en adolescentes y jóvenes adultos. Experto en crisis de identidad, autolesión e ideación suicida en población juvenil.",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Coyoacán",
+      "colonia": "Del Carmen",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3467",
+      "longitud": "-99.1619",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 1200.0,
+      "cantidad_min": 800,
+      "cantidad_max": 1500,
+      "descripcion": "$800-$1,500 (Descuentos para estudiantes)",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Ideación Suicida en Adolescentes",
+      "Autolesión / Cutting",
+      "Depresión Juvenil",
+      "Ansiedad en Jóvenes",
+      "Bullying y sus consecuencias",
+      "Crisis de Identidad",
+      "Trastornos Alimentarios"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Jóvenes",
+      "Niños"
+    ],
+    "genero_especialista": "Masculino",
+    "contacto": {
+      "telefono": "55-2345-6789",
+      "email": "mtorres@clinicaesperanza.mx",
+      "website": "www.clinicaesperanza.mx",
+      "whatsapp": "55-2345-6789"
+    },
+    "rating": 4.9,
+    "resenas": 156,
+    "disponibilidad": "Lunes a Sábado 9:00-19:00 (Citas de emergencia disponibles)",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Efectivo",
+      "Tarjeta",
+      "Transferencia",
+      "MSI",
+      "Seguros"
+    ],
+    "es_emergencia": true,
+    "tags_match": "crisis adolescentes jóvenes ideación suicida autolesión cutting depresión juvenil bullying estudiantes",
+    "tipo_servicio": "Psiquiatría Infanto-Juvenil de Crisis",
+    "servicios_ofrecidos": [
+      "Evaluación psiquiátrica",
+      "Manejo de crisis",
+      "Psicofarmacología",
+      "Terapia individual",
+      "Orientación a padres"
+    ],
+    "atencion_inmediata": true,
+    "acepta_seguros": true,
+    "descuento_estudiantes": "20% con credencial vigente"
+  },
+  {
+    "id": "online_001",
+    "nombre": "Psic. Laura Vega - Terapia Online Accesible",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga Clínica",
+    "institucion": "Terapia en Línea MX",
+    "descripcion": "Psicóloga clínica con enfoque humanista. Especializada en ansiedad, depresión y apoyo emocional. Terapia 100% online, accesible y flexible.",
+    "modalidad": "Online",
+    "ubicacion": {
+      "delegacion": "Cualquier parte de CDMX",
+      "colonia": "Virtual",
+      "ciudad": "Ciudad de México",
+      "latitud": "",
+      "longitud": "",
+      "modalidad": "Online"
+    },
+    "costo": {
+      "promedio": 450.0,
+      "cantidad_min": 350,
+      "cantidad_max": 600,
+      "descripcion": "$350-$600 por sesión (Paquetes con descuento disponibles)",
+      "es_gratuito": false
+    },
+    "especializaciones": [
+      "Ansiedad",
+      "Depresión",
+      "Estrés",
+      "Ataques de Pánico",
+      "Autoestima",
+      "Relaciones Interpersonales",
+      "Duelo"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Jóvenes"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-8765-4321",
+      "email": "lvega@terapiaenlineamx.com",
+      "website": "www.terapiaenlineamx.com",
+      "whatsapp": "55-8765-4321"
+    },
+    "rating": 4.7,
+    "resenas": 203,
+    "disponibilidad": "Lunes a Viernes 10:00-20:00, Sábados 10:00-14:00",
+    "tiene_sabado": true,
+    "metodos_pago": [
+      "Tarjeta",
+      "Transferencia",
+      "PayPal",
+      "OXXO",
+      "MSI"
+    ],
+    "es_emergencia": false,
+    "tags_match": "ansiedad depresión online virtual barato accesible flexible jóvenes estudiantes",
+    "tipo_servicio": "Terapia Psicológica Online",
+    "servicios_ofrecidos": [
+      "Terapia individual",
+      "Primera sesión 50% descuento",
+      "Paquetes de 4 y 8 sesiones",
+      "Videollamada por Zoom/Meet",
+      "Horarios flexibles"
+    ],
+    "primera_sesion_descuento": "50%",
+    "plataformas": ["Zoom", "Google Meet", "WhatsApp Video"]
+  },
+  {
+    "id": "budget_001",
+    "nombre": "Psic. Carmen Ruiz - Consulta Social",
+    "tipo_recurso": "especialista",
+    "tipo_profesional": "Psicóloga",
+    "institucion": "Centro Comunitario de Salud Mental",
+    "descripcion": "Psicóloga con consulta de bajo costo. Especializada en población estudiantil y personas sin recursos. Enfoque empático y accesible.",
+    "modalidad": "Presencial / Online",
+    "ubicacion": {
+      "delegacion": "Iztapalapa",
+      "colonia": "Santa Martha Acatitla",
+      "ciudad": "Ciudad de México",
+      "latitud": "19.3614",
+      "longitud": "-99.0092",
+      "modalidad": "Presencial / Online"
+    },
+    "costo": {
+      "promedio": 200.0,
+      "cantidad_min": 100,
+      "cantidad_max": 300,
+      "descripcion": "$100-$300 (Escala móvil según ingresos - Algunas sesiones GRATUITAS)",
+      "es_gratuito": true
+    },
+    "especializaciones": [
+      "Ansiedad",
+      "Depresión",
+      "Violencia Familiar",
+      "Orientación Vocacional",
+      "Apoyo Emocional",
+      "Estrés Académico"
+    ],
+    "grupo_etario": [
+      "Adolescentes",
+      "Adultos",
+      "Jóvenes",
+      "Adultos Mayores"
+    ],
+    "genero_especialista": "Femenino",
+    "contacto": {
+      "telefono": "55-1111-2222",
+      "email": "cruiz@centrocomunitario.org",
+      "website": "www.centrocomunitariosalud.org",
+      "whatsapp": "55-1111-2222"
+    },
+    "rating": 4.6,
+    "resenas": 78,
+    "disponibilidad": "Lunes a Viernes 8:00-16:00",
+    "tiene_sabado": false,
+    "metodos_pago": [
+      "Efectivo",
+      "Gratuito según caso"
+    ],
+    "es_emergencia": false,
+    "tags_match": "barato económico gratuito gratis estudiantes sin recursos escala móvil iztapalapa accesible",
+    "tipo_servicio": "Consulta Psicológica Social",
+    "servicios_ofrecidos": [
+      "Terapia individual",
+      "Evaluaciones psicológicas",
+      "Orientación familiar",
+      "Grupos de apoyo",
+      "Talleres comunitarios"
+    ],
+    "requisitos": "Ninguno - Abierto a toda la comunidad",
+    "programas_especiales": "Becas para estudiantes y personas vulnerables"
+  }
+]

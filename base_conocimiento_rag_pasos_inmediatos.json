@@ -1,0 +1,431 @@
+[
+  {
+    "id": "kb_001",
+    "tema": "Ataque de Pánico - Intervención Inmediata",
+    "categoria": "Trastornos de Ansiedad",
+    "nivel_urgencia": "Alto",
+    "sintomas_clave": [
+      "Taquicardia",
+      "Dificultad para respirar",
+      "Opresión en el pecho",
+      "Mareos",
+      "Sudoración excesiva"
+    ],
+    "descripcion_clinica": "El ataque de pánico es un episodio repentino de miedo intenso. Típicamente dura 15-30 minutos. No es peligroso para la vida aunque se sienta así.",
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "nombre": "Técnica de Respiración 4-7-8",
+        "descripcion": "Inhala contar 4 → Retén 7 → Exhala 8. Repetir 4 ciclos."
+      },
+      {
+        "paso": 2,
+        "nombre": "Grounding 5-4-3-2-1",
+        "descripcion": "5 COSAS VES, 4 TOCAS, 3 ESCUCHAS, 2 HUELES, 1 SABOREAS"
+      }
+    ],
+    "cuales_contactar": "911 si síntomas no ceden",
+    "fuentes": [
+      "Clínica Universitaria La Salle",
+      "HelpGuide",
+      "Consulta Despertares"
+    ],
+    "enlaces_referencia": [
+      "https://www.clinicauniversitarialasalle.es/primeros-auxilios-ante-un-ataque-de-panico/",
+      "https://www.helpguide.org/es/ansiedad/ataques-de-panico-y-trastorno-de-panico"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Fuentes médicas profesionales"
+  },
+  {
+    "id": "kb_002",
+    "tema": "Higiene del Sueño - Manejo de Insomnio",
+    "categoria": "Trastornos del Sueño",
+    "nivel_urgencia": "Medio",
+    "sintomas_clave": [
+      "Dificultad para conciliar sueño",
+      "Despertares nocturnos",
+      "Fatiga diurna"
+    ],
+    "descripcion_clinica": "La falta de sueño agrava depresión, ansiedad y estrés. Hay relación bidireccional entre sueño pobre y síntomas mentales.",
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "accion": "Horario regular",
+        "descripcion": "Acuéstate y levántate MISMA HORA cada día"
+      },
+      {
+        "paso": 2,
+        "accion": "Evita pantallas",
+        "descripcion": "No usar dispositivos 60 minutos antes de dormir"
+      },
+      {
+        "paso": 3,
+        "accion": "Ambiente propicio",
+        "descripcion": "Oscuridad, temperatura 16-19°C, silencio"
+      },
+      {
+        "paso": 4,
+        "accion": "Reduce cafeína",
+        "descripcion": "Evita cafeína después de las 14:00"
+      }
+    ],
+    "alimentos_recomendados": [
+      "Leche tibia con miel",
+      "Plátano",
+      "Almendras",
+      "Té de manzanilla"
+    ],
+    "fuentes": [
+      "Mayo Clinic",
+      "Resmed México",
+      "ADIPA"
+    ],
+    "enlaces_referencia": [
+      "https://adipa.mx/noticias/dormir-para-estar-bien-el-vinculo-entre-sueno-y-la-salud-mental/"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Fuentes médicas profesionales"
+  },
+  {
+    "id": "kb_003",
+    "tema": "Ansiedad Generalizada - Técnica de Grounding",
+    "categoria": "Trastornos de Ansiedad",
+    "nivel_urgencia": "Medio",
+    "sintomas_clave": [
+      "Preocupación excesiva",
+      "Inquietud",
+      "Tensión muscular",
+      "Miedo al futuro"
+    ],
+    "descripcion_clinica": "Preocupación crónica sobre múltiples áreas. El grounding reconecta con el presente interrumpiendo pensamientos catastróficos.",
+    "tecnicas_grounding": [
+      {
+        "nombre": "5-4-3-2-1",
+        "pasos": [
+          "5 COSAS QUE VES",
+          "4 COSAS QUE TOCAS",
+          "3 COSAS QUE ESCUCHAS",
+          "2 COSAS QUE HUELES",
+          "1 COSA QUE SABOREAS"
+        ],
+        "duracion": "5-10 minutos"
+      },
+      {
+        "nombre": "Pies sobre la Tierra",
+        "pasos": [
+          "Quítate zapatos",
+          "Camina sobre césped/arena",
+          "Siente conexión con suelo"
+        ],
+        "duracion": "10-30 minutos"
+      }
+    ],
+    "fuentes": [
+      "PsicoActiva",
+      "Psicólogos Córdoba",
+      "Terapify"
+    ],
+    "enlaces_referencia": [
+      "https://www.psicoactiva.com/blog/la-tecnica-del-grounding-como-ejercicio-para-reducir-la-ansiedad/"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Fuentes médicas profesionales"
+  },
+  {
+    "id": "kb_004",
+    "tema": "Ideación Suicida - EMERGENCIA",
+    "categoria": "Crisis / Emergencia",
+    "nivel_urgencia": "CRÍTICO",
+    "sintomas_clave": [
+      "Expresar deseo de morir",
+      "Buscar métodos letales",
+      "Regalo de objetos valiosos",
+      "Conducta de despedida",
+      "Aislamiento social"
+    ],
+    "senales_de_alerta_graves": [
+      "Verbalización directa de suicidio",
+      "Búsqueda de métodos letales en línea",
+      "Acumular pastillas o comprar armas",
+      "Cambios extremos de humor (muy triste a tranquilo repentinamente)"
+    ],
+    "PASOS_INMEDIATOS_CRÍTICOS": [
+      {
+        "paso": 1,
+        "accion": "LLAMA INMEDIATAMENTE",
+        "numeros": [
+          "EMERGENCIA: 911",
+          "Línea de la Vida (México): 800-911-2000",
+          "Línea 024 (España): 024"
+        ],
+        "urgencia": "AHORA - NO ESPERES"
+      },
+      {
+        "paso": 2,
+        "accion": "NO dejes a la persona sola",
+        "descripcion": "Mantén compañía constantemente"
+      },
+      {
+        "paso": 3,
+        "accion": "Retira acceso a métodos letales",
+        "ejemplos": [
+          "Medicamentos",
+          "Objetos cortantes",
+          "Armas"
+        ]
+      },
+      {
+        "paso": 4,
+        "accion": "Escucha sin juzgar",
+        "notas": "Valida dolor pero NO la solución"
+      }
+    ],
+    "QUE_NO_HACER": [
+      "Promete guardar el secreto",
+      "Minimiza el peligro",
+      "Dejes solo",
+      "Critiques o juzgues",
+      "Intentes ser único apoyo"
+    ],
+    "NUMEROS_EMERGENCIA": {
+      "México": "800-911-2000 (24/7 GRATIS)",
+      "España": "024 (24/7 GRATIS)",
+      "Internacional": "911 o emergencia local"
+    },
+    "fuentes": [
+      "NIMH",
+      "Som360",
+      "Cruz Roja"
+    ],
+    "enlaces_referencia": [
+      "https://www.nimh.nih.gov/health/topics/espanol/prevencion-del-suicidio",
+      "https://www.som360.org/es/senales-alerta-factores-riesgo-factores-proteccion"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Instituciones médicas internacionales"
+  },
+  {
+    "id": "kb_005",
+    "tema": "Trastorno Bipolar - Primeros Pasos",
+    "categoria": "Trastornos del Ánimo",
+    "nivel_urgencia": "Muy Alto",
+    "sintomas_manias": [
+      "Energía excesiva",
+      "Pensamientos acelerados",
+      "Comportamientos riesgo",
+      "Gasto excesivo"
+    ],
+    "sintomas_depresion": [
+      "Tristeza profunda",
+      "Fatiga",
+      "Falta de interés",
+      "Ideación suicida"
+    ],
+    "pasos_inmediatos_manias": [
+      {
+        "paso": 1,
+        "accion": "Contacta profesional inmediatamente",
+        "tiempo": "MISMO DÍA"
+      },
+      {
+        "paso": 2,
+        "accion": "Verifica que toma medicamentos",
+        "detalles": "Estabilizadores del ánimo según prescripción"
+      },
+      {
+        "paso": 3,
+        "accion": "Establece estructura: horarios fijos, rutina, límites en gastos",
+        "urgencia": "CRÍTICO"
+      }
+    ],
+    "fuentes": [
+      "Mayo Clinic",
+      "NIMH",
+      "HelpGuide"
+    ],
+    "enlaces_referencia": [
+      "https://www.mayoclinic.org/es/diseases-conditions/bipolar-disorder/diagnosis-treatment/drc-20355961"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Instituciones médicas profesionales"
+  },
+  {
+    "id": "kb_006",
+    "tema": "TDAH - Estrategias Inmediatas",
+    "categoria": "Trastornos del Desarrollo Neurológico",
+    "nivel_urgencia": "Medio",
+    "sintomas_clave": [
+      "Dificultad concentrar",
+      "Impulsividad",
+      "Hiperactividad",
+      "Desorganización"
+    ],
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "accion": "Crea estructura y rutina",
+        "detalles": "Horarios fijos, mismo lugar para tareas"
+      },
+      {
+        "paso": 2,
+        "accion": "Divide tareas en pasos pequeños",
+        "ejemplo": "No 'ordena habitación' sino '1) recolecta ropa, 2) coloca en cesta'"
+      },
+      {
+        "paso": 3,
+        "accion": "Sistema de recordatorios",
+        "herramientas": [
+          "Alarmas",
+          "Notas adhesivas",
+          "Apps"
+        ]
+      }
+    ],
+    "fuentes": [
+      "CDC",
+      "MSD Manuals",
+      "NIMH"
+    ],
+    "enlaces_referencia": [
+      "https://www.cdc.gov/adhd/es/treatment/tratamiento-del-trastorno-por-deficit-de-atencion-e-hiperactividad-tdah.html"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Instituciones médicas profesionales"
+  },
+  {
+    "id": "kb_007",
+    "tema": "Fobia Social - Manejo Inmediato",
+    "categoria": "Trastornos de Ansiedad",
+    "nivel_urgencia": "Medio",
+    "sintomas_clave": [
+      "Miedo intenso situaciones sociales",
+      "Ruborización",
+      "Temblor",
+      "Evitación"
+    ],
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "accion": "Preparación previa",
+        "detalles": "Lee noticias, enfócate en cualidades positivas"
+      },
+      {
+        "paso": 2,
+        "accion": "Respiración profunda (10 min antes)",
+        "detalles": "Relaja cuerpo antes de evento"
+      },
+      {
+        "paso": 3,
+        "accion": "Exposición gradual",
+        "pasos": [
+          "Situaciones menos amenazantes",
+          "Aumenta dificultad lentamente",
+          "Celebra logros"
+        ]
+      }
+    ],
+    "fuentes": [
+      "Mayo Clinic",
+      "Neuro-Class",
+      "MenteAmente"
+    ],
+    "enlaces_referencia": [
+      "https://www.mayoclinic.org/es/diseases-conditions/social-anxiety-disorder/diagnosis-treatment/drc-20353567"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Fuentes médicas profesionales"
+  },
+  {
+    "id": "kb_008",
+    "tema": "Trastorno Obsesivo Compulsivo (TOC)",
+    "categoria": "Trastornos de Ansiedad",
+    "nivel_urgencia": "Medio",
+    "sintomas_clave": [
+      "Pensamientos obsesivos repetitivos",
+      "Compulsiones",
+      "Ansiedad severa si no cumple ritual"
+    ],
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "accion": "No resistas pensamientos",
+        "explicacion": "Resistir empeora - Observa como nube pasando"
+      },
+      {
+        "paso": 2,
+        "accion": "No realices ritual/compulsión",
+        "beneficio": "Con tiempo, ansiedad baja sin ritual"
+      },
+      {
+        "paso": 3,
+        "accion": "Exposición y Prevención de Respuesta (EPR)",
+        "pasos": [
+          "Exponte al pensamiento",
+          "Tolera ansiedad sin compulsión",
+          "Ansiedad disminuye"
+        ]
+      }
+    ],
+    "fuentes": [
+      "Mayo Clinic",
+      "Elsevier Health",
+      "Royal College of Psychiatrists"
+    ],
+    "enlaces_referencia": [
+      "https://www.mayoclinic.org/es/diseases-conditions/obsessive-compulsive-disorder/diagnosis-treatment/drc-20354438"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Instituciones médicas profesionales"
+  },
+  {
+    "id": "kb_009",
+    "tema": "Primeros Síntomas de Psicosis - Intervención Temprana",
+    "categoria": "Psicosis / Esquizofrenia",
+    "nivel_urgencia": "Muy Alto",
+    "sintomas_tempranos": [
+      "Sentirse tenso, miedoso",
+      "Aceleración de pensamientos",
+      "Aislamiento social",
+      "Cambios de comportamiento",
+      "Deterioro en higiene"
+    ],
+    "sintomas_psicosis_clara": [
+      "Alucinaciones",
+      "Delirios",
+      "Pensamiento desorganizado",
+      "Pérdida de juicio de realidad"
+    ],
+    "pasos_inmediatos": [
+      {
+        "paso": 1,
+        "accion": "Contacta profesional URGENTEMENTE",
+        "tiempo": "MISMA SEMANA"
+      },
+      {
+        "paso": 2,
+        "accion": "EMERGENCIA - 911 o urgencias"
+      },
+      {
+        "paso": 3,
+        "accion": "Intervención PSICOSOCIAL (prioritario)",
+        "incluye": [
+          "Psicoterapia",
+          "Apoyo familiar",
+          "Educación"
+        ]
+      }
+    ],
+    "importancia": "Intervención temprana puede retrasar o prevenir primer episodio psicótico",
+    "fuentes": [
+      "ADIPA",
+      "Som360",
+      "Infopsicosis"
+    ],
+    "enlaces_referencia": [
+      "https://adipa.mx/noticias/psicopatologia-de-la-esquizofrenia-la-importancia-de-la-deteccion-e-intervencion-precoz/"
+    ],
+    "fecha_actualizacion": "2025-11-21",
+    "validado_por": "Instituciones médicas profesionales"
+  }
+]

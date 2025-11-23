@@ -1,0 +1,744 @@
+"""
+API REST para el Sistema de Retrieval de Especialistas
+Diseñado para integración con aplicación móvil
+
+Uso:
+    python api_rest.py
+
+Endpoints:
+    POST /search - Buscar especialistas
+    GET /health - Health check
+"""
+
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from retrieval_system import MentalHealthRetrieval, QueryFilters
+from knowledge_rag import MentalHealthKnowledgeRAG
+import logging
+from typing import Dict, Any
+import os
+from dotenv import load_dotenv
+
+# Cargar variables de entorno desde .env
+load_dotenv()
+
+# Configurar logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+# Inicializar Flask
+app = Flask(__name__)
+CORS(app)  # Permitir CORS para llamadas desde móvil
+
+# Variables globales para sistemas (se cargan al iniciar para respuestas rápidas)
+retrieval_system = None
+knowledge_system = None
+
+# Pre-cargar sistemas al iniciar (evita lazy loading en primera request)
+def init_systems():
+    """Inicializa los sistemas al arrancar Gunicorn (solo una vez)"""
+    global retrieval_system, knowledge_system
+    if retrieval_system is None:
+        logger.info("🔄 Pre-cargando sistema de retrieval...")
+        retrieval_system = MentalHealthRetrieval('recursos_salud_mental_cdmx.json')
+        logger.info("✓ Sistema RecSys listo")
+    if knowledge_system is None:
+        logger.info("🔄 Pre-cargando sistema de conocimiento...")
+        knowledge_system = MentalHealthKnowledgeRAG('base_conocimiento_rag_pasos_inmediatos.json')
+        logger.info("✓ Sistema RAG listo")
+
+# Cargar en el primer request usando before_first_request
+@app.before_request
+def ensure_systems_loaded():
+    """Asegura que los sistemas estén cargados antes de cualquier request"""
+    if retrieval_system is None or knowledge_system is None:
+        init_systems()
+
+# Palabras clave de crisis y alto riesgo
+CRISIS_KEYWORDS = [
+    'suicid', 'suicidio', 'suicidarme', 'matarme', 'quitarme la vida',
+    'morir', 'muerte', 'acabar con todo', 'no quiero vivir',
+    'mejor muerto', 'quiero desaparecer', 'hacerme daño',
+    'cortarme', 'autolesion', 'pastillas para morir',
+    'plan para suicidarme', 'quiero que acabe', 'ya no puedo más'
+]
+
+HIGH_RISK_KEYWORDS = [
+    'pánico', 'panico', 'crisis', 'desesperado', 'desesperada',
+    'muy mal', 'horrible', 'insoportable', 'no aguanto',
+    'colapso', 'emergencia', 'urgente', 'ayuda inmediata'
+]
+
+def detectar_nivel_crisis(texto: str) -> tuple[str, bool]:
+    """
+    Detecta nivel de crisis en el texto del usuario
+    
+    Returns:
+        tuple: (nivel, requiere_emergencia)
+        - nivel: 'CRITICO', 'ALTO', 'MODERADO', 'NORMAL'
+        - requiere_emergencia: bool
+    """
+    texto_lower = texto.lower()
+    
+    # Detectar crisis crítica (suicidio/autolesión)
+    for keyword in CRISIS_KEYWORDS:
+        if keyword in texto_lower:
+            logger.critical(f"🚨 CRISIS DETECTADA: palabra clave '{keyword}' en texto")
+            return 'CRITICO', True
+    
+    # Detectar alto riesgo
+    for keyword in HIGH_RISK_KEYWORDS:
+        if keyword in texto_lower:
+            logger.warning(f"⚠️ ALTO RIESGO: palabra clave '{keyword}' en texto")
+            return 'ALTO', True
+    
+    return 'NORMAL', False
+
+def generar_respuesta_empatica(sintoma: str, nivel_crisis: str, num_resultados: int, 
+                               tiene_resultados: bool, genero: str = '', 
+                               ubicacion: str = '', primer_resultado: dict = None) -> str:
+    """
+    Genera respuesta de voz empática según el nivel de crisis
+    
+    Args:
+        sintoma: Síntoma o problema del usuario
+        nivel_crisis: 'CRITICO', 'ALTO', 'MODERADO', 'NORMAL'
+        num_resultados: Cantidad de resultados encontrados
+        tiene_resultados: Si hay resultados disponibles
+        genero: Género preferido del especialista
+        ubicacion: Ubicación solicitada
+        primer_resultado: Primer especialista encontrado
+    
+    Returns:
+        str: Respuesta de voz empática y apropiada
+    """
+    if nivel_crisis == 'CRITICO':
+        return (
+            f"⚠️ Escucho que estás pasando por un momento muy difícil. "
+            f"Tu seguridad es lo más importante. "
+            f"Por favor, llama INMEDIATAMENTE a la Línea de la Vida: 800-911-2000, "
+            f"o al 911 si necesitas ayuda urgente. Están disponibles 24/7 y es completamente gratuito. "
+            f"También encontré {num_resultados} especialista{'s' if num_resultados > 1 else ''} que puede{'n' if num_resultados > 1 else ''} apoyarte, "
+            f"pero por favor, contacta primero a los servicios de emergencia."
+        )
+    
+    if nivel_crisis == 'ALTO':
+        respuesta = f"Entiendo que estás pasando por un momento muy difícil con {sintoma}. "
+        if not tiene_resultados:
+            respuesta += "Aunque no encontré especialistas con los criterios exactos, "
+            respuesta += "es importante que busques ayuda. ¿Quieres que busque con otros criterios? "
+            respuesta += "Si sientes que es una emergencia, puedes llamar al 800-911-2000."
+        else:
+            respuesta += f"Encontré {num_resultados} especialista{'s' if num_resultados > 1 else ''} "
+            if genero:
+                respuesta += f"{genero}{'es' if num_resultados > 1 else ''} "
+            respuesta += f"que puede{'n' if num_resultados > 1 else ''} ayudarte. "
+            
+            if primer_resultado:
+                nombre = primer_resultado.get('nombre', 'un especialista')
+                modalidad = primer_resultado.get('modalidad', 'Presencial')
+                delegacion = primer_resultado.get('ubicacion', {}).get('delegacion', '')
+                costo = primer_resultado.get('costo', 'Información de costo disponible')
+                
+                respuesta += f"Te recomiendo a {nombre}, trabaja {modalidad}"
+                if ubicacion:
+                    respuesta += f" en {delegacion}"
+                respuesta += f". {costo}. "
+                
+                if num_resultados > 1:
+                    respuesta += f"También tengo {num_resultados - 1} opcione{'s' if num_resultados > 2 else ''} más."
+            
+            respuesta += " Recuerda que no estás solo, hay personas que quieren ayudarte."
+        return respuesta
+    
+    # NORMAL - respuesta empática pero menos intensa
+    if not tiene_resultados:
+        respuesta = f"Entiendo que estás buscando ayuda con {sintoma}. "
+        respuesta += "Lamentablemente no encontré especialistas"
+        if genero:
+            respuesta += f" {genero}es"
+        if ubicacion:
+            respuesta += f" en {ubicacion}"
+        respuesta += ". ¿Te gustaría que busque con otros criterios o en otra zona?"
+    else:
+        respuesta = f"Gracias por confiar en mí. Encontré {num_resultados} especialista{'s' if num_resultados > 1 else ''} "
+        if genero:
+            respuesta += f"{genero}{'es' if num_resultados > 1 else ''} "
+        respuesta += f"que puede{'n' if num_resultados > 1 else ''} ayudarte con {sintoma}. "
+        
+        if primer_resultado:
+            nombre = primer_resultado.get('nombre', 'un especialista')
+            modalidad = primer_resultado.get('modalidad', 'Presencial')
+            delegacion = primer_resultado.get('ubicacion', {}).get('delegacion', '')
+            costo = primer_resultado.get('costo', 'Información disponible')
+            
+            respuesta += f"Mi mejor recomendación es {nombre}, trabaja {modalidad}"
+            if ubicacion:
+                respuesta += f" en {delegacion}"
+            respuesta += f". {costo}. "
+            
+            if num_resultados > 1:
+                respuesta += f"También tengo {num_resultados - 1} opcione{'s' if num_resultados > 2 else ''} más que te pueden interesar."
+    
+    return respuesta
+
+def get_retrieval_system():
+    """Retorna el sistema de retrieval (ya pre-cargado)"""
+    global retrieval_system
+    if retrieval_system is None:
+        init_systems()
+    return retrieval_system
+
+def get_knowledge_system():
+    """Retorna el sistema de conocimiento (ya pre-cargado)"""
+    global knowledge_system
+    if knowledge_system is None:
+        init_systems()
+    return knowledge_system
+
+
+def parse_filters(request_data: Dict[str, Any]) -> QueryFilters:
+    """
+    Parsea los filtros desde el request JSON
+    """
+    filters = QueryFilters()
+    
+    if 'max_cost' in request_data:
+        filters.max_cost = float(request_data['max_cost'])
+    
+    if 'min_rating' in request_data:
+        filters.min_rating = float(request_data['min_rating'])
+    
+    if 'modalidad' in request_data:
+        filters.modalidad = request_data['modalidad']
+    
+    if 'tipo_profesional' in request_data:
+        filters.tipo_profesional = request_data['tipo_profesional']
+    
+    if 'delegacion' in request_data:
+        filters.delegacion = request_data['delegacion']
+    
+    if 'especializaciones' in request_data:
+        filters.especializaciones = request_data['especializaciones']
+    
+    if 'grupo_etario' in request_data:
+        filters.grupo_etario = request_data['grupo_etario']
+    
+    if 'es_emergencia' in request_data:
+        filters.es_emergencia = bool(request_data['es_emergencia'])
+    
+    if 'es_gratuito' in request_data:
+        filters.es_gratuito = bool(request_data['es_gratuito'])
+    
+    return filters
+
+
+def format_for_mobile(results: list) -> list:
+    """
+    Formatea resultados para consumo desde app móvil
+    Simplifica y estructura la información
+    """
+    mobile_results = []
+    
+    for result in results:
+        mobile_result = {
+            'id': result.get('id'),
+            'nombre': result.get('nombre'),
+            'tipo_profesional': result.get('tipo_profesional'),
+            'modalidad': result.get('modalidad'),
+            'ubicacion': {
+                'colonia': result.get('ubicacion', {}).get('colonia'),
+                'delegacion': result.get('ubicacion', {}).get('delegacion'),
+                'latitud': result.get('ubicacion', {}).get('latitud'),
+                'longitud': result.get('ubicacion', {}).get('longitud'),
+            },
+            'costo': result.get('costo', {}).get('descripcion'),
+            'costo_min': result.get('costo', {}).get('cantidad_min'),
+            'rating': result.get('rating'),
+            'resenas': result.get('resenas'),
+            'especializaciones': result.get('especializaciones', []),
+            'grupo_etario': result.get('grupo_etario', []),
+            'contacto': {
+                'telefono': result.get('contacto', {}).get('telefono'),
+                'email': result.get('contacto', {}).get('email'),
+                'website': result.get('contacto', {}).get('website'),
+            },
+            'disponibilidad': result.get('disponibilidad'),
+            'metodos_pago': result.get('metodos_pago', []),
+            'scores': {
+                'relevance': round(result.get('relevance_score', 0), 3),
+                'similarity': round(result.get('semantic_similarity', 0), 3)
+            }
+        }
+        mobile_results.append(mobile_result)
+    
+    return mobile_results
+
+
+@app.route('/health', methods=['GET'])
+def health_check():
+    """
+    Health check endpoint
+    """
+    return jsonify({
+        'status': 'healthy',
+        'service': 'Mental Health Retrieval API',
+        'version': '1.0.0'
+    })
+
+
+@app.route('/search', methods=['POST'])
+def search_specialists():
+    """
+    Endpoint principal para buscar especialistas
+    
+    Body (JSON):
+    {
+        "query": "Necesito ayuda con ansiedad",
+        "top_k": 5,
+        "filters": {
+            "max_cost": 800,
+            "min_rating": 4.5,
+            "modalidad": ["Online"],
+            "es_emergencia": false
+        }
+    }
+    
+    Response:
+    {
+        "success": true,
+        "query": "Necesito ayuda con ansiedad",
+        "total_results": 5,
+        "results": [...]
+    }
+    """
+    try:
+        # Obtener datos del request
+        data = request.get_json()
+        
+        if not data or 'query' not in data:
+            return jsonify({
+                'success': False,
+                'error': 'El campo "query" es requerido'
+            }), 400
+        
+        query = data['query']
+        top_k = data.get('top_k', 5)
+        
+        # Validar top_k
+        if not isinstance(top_k, int) or top_k < 1 or top_k > 20:
+            return jsonify({
+                'success': False,
+                'error': 'top_k debe ser un entero entre 1 y 20'
+            }), 400
+        
+        # Parsear filtros
+        filters = None
+        if 'filters' in data:
+            filters = parse_filters(data['filters'])
+        
+        logger.info(f"Búsqueda: '{query}' | Top K: {top_k} | Filtros: {filters}")
+        
+        # Realizar búsqueda
+        results = get_retrieval_system().search(query, filters=filters, top_k=top_k)
+        
+        # Formatear para móvil
+        mobile_results = format_for_mobile(results)
+        
+        # Respuesta
+        response = {
+            'success': True,
+            'query': query,
+            'total_results': len(mobile_results),
+            'results': mobile_results
+        }
+        
+        logger.info(f"Retornando {len(mobile_results)} resultados")
+        
+        return jsonify(response)
+    
+    except Exception as e:
+        logger.error(f"Error en búsqueda: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@app.route('/emergency', methods=['POST'])
+def emergency_search():
+    """
+    Endpoint especial para casos de emergencia
+    Automáticamente aplica filtros para crisis
+    
+    Body (JSON):
+    {
+        "query": "Pensamientos suicidas",
+        "max_cost": 500  // opcional
+    }
+    """
+    try:
+        data = request.get_json()
+        
+        if not data or 'query' not in data:
+            return jsonify({
+                'success': False,
+                'error': 'El campo "query" es requerido'
+            }), 400
+        
+        query = data['query']
+        max_cost = data.get('max_cost', 1000)
+        
+        # Filtros automáticos para emergencia
+        filters = QueryFilters(
+            es_emergencia=True,
+            max_cost=max_cost
+        )
+        
+        logger.warning(f"🚨 BÚSQUEDA DE EMERGENCIA: '{query}'")
+        
+        # Buscar solo top 3 más relevantes en emergencia
+        results = get_retrieval_system().search(query, filters=filters, top_k=3)
+        mobile_results = format_for_mobile(results)
+        
+        response = {
+            'success': True,
+            'emergency': True,
+            'query': query,
+            'total_results': len(mobile_results),
+            'results': mobile_results,
+            'message': 'Si estás en crisis, contacta inmediatamente: Línea de la Vida 800-911-2000'
+        }
+        
+        return jsonify(response)
+    
+    except Exception as e:
+        logger.error(f"Error en búsqueda de emergencia: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e)
+        }), 500
+
+
+@app.route('/buscar_especialista', methods=['POST'])
+def buscar_especialista():
+    """
+    Endpoint para ElevenLabs Tool: Buscar especialistas/doctores
+    Compatible con los 4 parámetros configurados en ElevenLabs.
+    
+    Body (JSON):
+    {
+        "sintoma": "ansiedad",           // REQUERIDO - Síntoma o problema principal
+        "genero": "mujer",               // OPCIONAL - Género preferido del especialista
+        "presupuesto": "barato",         // OPCIONAL - Restricción económica
+        "ubicacion": "Coyoacán"          // OPCIONAL - Zona o delegación
+    }
+    
+    Response:
+    {
+        "success": true,
+        "respuesta_voz": "Encontré 3 especialistas...",
+        "resultados": [...]
+    }
+    """
+    try:
+        data = request.get_json()
+        
+        # Validar parámetro requerido
+        if not data or 'sintoma' not in data:
+            return jsonify({
+                'success': False,
+                'error': 'El parámetro "sintoma" es requerido',
+                'respuesta_voz': 'Lo siento, necesito que me digas qué síntoma o problema tienes.'
+            }), 400
+        
+        # Extraer parámetros
+        sintoma = data['sintoma']
+        genero = data.get('genero', '').lower()  # hombre, mujer, etc.
+        presupuesto = data.get('presupuesto', '')
+        ubicacion = data.get('ubicacion', '')
+        
+        # 🚨 DETECCIÓN DE CRISIS
+        nivel_crisis, requiere_emergencia = detectar_nivel_crisis(sintoma)
+        
+        if requiere_emergencia:
+            logger.critical(f"🚨🚨🚨 CRISIS DETECTADA - Usuario: '{sintoma}' - Nivel: {nivel_crisis}")
+            # Activar endpoint de emergencia automáticamente
+            if nivel_crisis == 'CRITICO':
+                # Redirigir a protocolo de emergencia
+                filters_emergencia = QueryFilters(
+                    es_emergencia=True,
+                    max_cost=2000  # Menos restrictivo en crisis
+                )
+                results = get_retrieval_system().search(
+                    f"crisis psicológica {sintoma}", 
+                    filters=filters_emergencia, 
+                    top_k=3
+                )
+                mobile_results = format_for_mobile(results)
+                
+                respuesta_voz = generar_respuesta_empatica(
+                    sintoma=sintoma,
+                    nivel_crisis=nivel_crisis,
+                    num_resultados=len(mobile_results),
+                    tiene_resultados=len(mobile_results) > 0,
+                    genero=genero,
+                    ubicacion=ubicacion,
+                    primer_resultado=mobile_results[0] if mobile_results else None
+                )
+                
+                return jsonify({
+                    'success': True,
+                    'alerta_crisis': True,
+                    'nivel_urgencia': nivel_crisis,
+                    'respuesta_voz': respuesta_voz,
+                    'numeros_emergencia': {
+                        'mexico': '800-911-2000 (Línea de la Vida - 24/7 GRATUITO)',
+                        'emergencia_general': '911',
+                        'mensaje': 'Por favor contacta inmediatamente si estás en peligro'
+                    },
+                    'parametros': {
+                        'sintoma': sintoma,
+                        'genero': genero or 'no especificado',
+                        'presupuesto': presupuesto or 'no especificado',
+                        'ubicacion': ubicacion or 'no especificado'
+                    },
+                    'total_resultados': len(mobile_results),
+                    'resultados': mobile_results
+                }), 200
+        
+        # Construir query natural para el RecSys
+        query_parts = [f"Necesito ayuda con {sintoma}"]
+        if ubicacion:
+            query_parts.append(f"cerca de {ubicacion}")
+        if genero:
+            query_parts.append(f"especialista {genero}")
+        query = " ".join(query_parts)
+        
+        # Configurar filtros según parámetros
+        filters = QueryFilters()
+        
+        # Filtro de presupuesto
+        if presupuesto:
+            presupuesto_lower = presupuesto.lower()
+            if any(word in presupuesto_lower for word in ['barato', 'económico', 'gratuito', 'gratis', 'sin dinero', 'estudiante', 'barata']):
+                filters.max_cost = 600
+                filters.es_gratuito = True
+            elif any(word in presupuesto_lower for word in ['medio', 'moderado', 'accesible', 'razonable']):
+                filters.max_cost = 1200
+            elif any(word in presupuesto_lower for word in ['caro', 'premium', 'privado']):
+                filters.max_cost = 3000
+            # Si no especifica límite, dejamos sin restricción
+        
+        # Filtro de ubicación
+        if ubicacion:
+            filters.delegacion = ubicacion
+        
+        # Filtro de género (usar el campo correcto del sistema)
+        if genero:
+            # Mapear los valores comunes a los esperados por el sistema
+            genero_map = {
+                'hombre': 'Masculino',
+                'masculino': 'Masculino',
+                'mujer': 'Femenino',
+                'femenino': 'Femenino',
+                'femenina': 'Femenino',
+                'cualquiera': 'Mixto',
+                'indistinto': 'Mixto'
+            }
+            genero_normalizado = genero_map.get(genero, genero.capitalize())
+            filters.genero_especialista = genero_normalizado
+        
+        # Log de búsqueda
+        logger.info(f"🔍 Búsqueda especialista: sintoma='{sintoma}', genero='{genero}', presupuesto='{presupuesto}', ubicacion='{ubicacion}'")
+        
+        # Buscar especialistas (top 5 para tener más opciones)
+        results = get_retrieval_system().search(query, filters=filters, top_k=5)
+        
+        # Limitar a top 3 para la respuesta
+        results = results[:3]
+        
+        # Formatear para móvil
+        mobile_results = format_for_mobile(results)
+        
+        # Generar respuesta empática usando la función
+        respuesta_voz = generar_respuesta_empatica(
+            sintoma=sintoma,
+            nivel_crisis=nivel_crisis,
+            num_resultados=len(mobile_results),
+            tiene_resultados=len(mobile_results) > 0,
+            genero=genero,
+            ubicacion=ubicacion,
+            primer_resultado=mobile_results[0] if mobile_results else None
+        )
+        
+        response = {
+            'success': True,
+            'alerta_crisis': requiere_emergencia,
+            'nivel_urgencia': nivel_crisis,
+            'respuesta_voz': respuesta_voz,
+            'parametros': {
+                'sintoma': sintoma,
+                'genero': genero or 'no especificado',
+                'presupuesto': presupuesto or 'no especificado',
+                'ubicacion': ubicacion or 'no especificado'
+            },
+            'total_resultados': len(mobile_results),
+            'resultados': mobile_results
+        }
+        
+        # Agregar números de emergencia si es alto riesgo
+        if nivel_crisis in ['CRITICO', 'ALTO']:
+            response['numeros_emergencia'] = {
+                'mexico': '800-911-2000 (Línea de la Vida - 24/7)',
+                'emergencia_general': '911',
+                'mensaje': 'Recursos de crisis disponibles 24/7'
+            }
+        
+        return jsonify(response)
+    
+    except Exception as e:
+        logger.error(f"Error en buscar_especialista: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'respuesta_voz': 'Lo siento, tuve un problema técnico al buscar especialistas. ¿Puedes intentarlo de nuevo?'
+        }), 500
+
+
+@app.route('/consultar_guia_medica', methods=['POST'])
+def consultar_guia_medica():
+    """
+    Endpoint para ElevenLabs Tool 2: Consultar guía médica (RAG)
+    
+    Body (JSON):
+    {
+        "pregunta": "¿Qué hago si tengo un ataque de pánico?"
+    }
+    
+    Response:
+    {
+        "success": true,
+        "respuesta_voz": "Para un ataque de pánico, aquí están los pasos...",
+        "articulo": {...}
+    }
+    """
+    try:
+        data = request.get_json()
+        
+        if not data or 'pregunta' not in data:
+            return jsonify({
+                'success': False,
+                'error': 'El parámetro "pregunta" es requerido',
+                'respuesta_voz': 'Lo siento, necesito que me digas qué quieres saber.'
+            }), 400
+        
+        pregunta = data['pregunta']
+        
+        logger.info(f"📚 Consulta guía médica: '{pregunta}'")
+        
+        # Buscar en base de conocimiento
+        resultados = get_knowledge_system().ask(pregunta, top_k=1, include_context=True)
+        
+        if not resultados:
+            return jsonify({
+                'success': False,
+                'respuesta_voz': 'Lo siento, no encontré información sobre eso. ¿Puedes reformular tu pregunta?',
+                'pregunta': pregunta
+            })
+        
+        articulo = resultados[0]
+        tema = articulo.get('tema', 'Información')
+        categoria = articulo.get('categoria', 'General')
+        nivel_urgencia = articulo.get('nivel_urgencia', 'N/A')
+        
+        # Generar respuesta para voz (concisa y natural)
+        respuesta_voz_parts = []
+        
+        # Intro
+        if nivel_urgencia == 'CRÍTICO':
+            respuesta_voz_parts.append(f"⚠️ ATENCIÓN: Esta es una situación crítica. ")
+            # Agregar números de emergencia si existen
+            if 'NUMEROS_EMERGENCIA' in articulo:
+                numeros = articulo['NUMEROS_EMERGENCIA']
+                if 'México' in numeros:
+                    respuesta_voz_parts.append(f"Por favor llama inmediatamente al {numeros['México']}. ")
+        
+        respuesta_voz_parts.append(f"Sobre {tema}: ")
+        
+        # Descripción breve
+        if 'descripcion_clinica' in articulo:
+            desc = articulo['descripcion_clinica']
+            # Limitar longitud para voz
+            if len(desc) > 150:
+                desc = desc[:147] + "..."
+            respuesta_voz_parts.append(f"{desc} ")
+        
+        # Pasos inmediatos (máximo 3)
+        pasos_key = 'PASOS_INMEDIATOS_CRÍTICOS' if 'PASOS_INMEDIATOS_CRÍTICOS' in articulo else 'pasos_inmediatos'
+        if pasos_key in articulo:
+            pasos = articulo[pasos_key][:3]  # Solo primeros 3
+            respuesta_voz_parts.append("Aquí están los pasos que puedes seguir: ")
+            for i, paso in enumerate(pasos, 1):
+                if isinstance(paso, dict):
+                    nombre = paso.get('nombre', paso.get('accion', ''))
+                    respuesta_voz_parts.append(f"{i}. {nombre}. ")
+        
+        respuesta_voz = "".join(respuesta_voz_parts)
+        
+        # Formatear artículo completo para contexto (opcional)
+        articulo_formateado = {
+            'tema': tema,
+            'categoria': categoria,
+            'nivel_urgencia': nivel_urgencia,
+            'descripcion': articulo.get('descripcion_clinica', ''),
+            'sintomas': articulo.get('sintomas_clave', []),
+            'pasos': articulo.get(pasos_key, []),
+            'relevancia': articulo.get('relevancia', 'N/A'),
+            'similarity_score': articulo.get('similarity_score', 0)
+        }
+        
+        # Agregar números de emergencia si es crítico
+        if nivel_urgencia == 'CRÍTICO' and 'NUMEROS_EMERGENCIA' in articulo:
+            articulo_formateado['numeros_emergencia'] = articulo['NUMEROS_EMERGENCIA']
+        
+        response = {
+            'success': True,
+            'respuesta_voz': respuesta_voz,
+            'pregunta': pregunta,
+            'articulo': articulo_formateado
+        }
+        
+        return jsonify(response)
+    
+    except Exception as e:
+        logger.error(f"Error en consultar_guia_medica: {str(e)}")
+        return jsonify({
+            'success': False,
+            'error': str(e),
+            'respuesta_voz': 'Lo siento, tuve un problema al consultar la guía médica. Por favor intenta de nuevo.'
+        }), 500
+
+
+@app.errorhandler(404)
+def not_found(error):
+    return jsonify({
+        'success': False,
+        'error': 'Endpoint no encontrado'
+    }), 404
+
+
+@app.errorhandler(500)
+def internal_error(error):
+    return jsonify({
+        'success': False,
+        'error': 'Error interno del servidor'
+    }), 500
+
+
+if __name__ == '__main__':
+    # Para desarrollo
+    app.run(host='0.0.0.0', port=5000, debug=True)
+    
+    # Para producción, usar gunicorn:
+    # gunicorn -w 4 -b 0.0.0.0:5000 api_rest:app

@@ -1,0 +1,29 @@
+# Dependencias para el Sistema de Retrieval RAG
+# Proyecto: Aplicación Móvil de Apoyo Mental con IA
+
+# Procesamiento de datos
+numpy>=1.22.4,<2.3.0
+pandas>=2.0.0
+
+# Búsqueda semántica con FAISS
+faiss-cpu>=1.7.0
+
+# OpenAI API para embeddings
+openai>=1.0.0
+
+# Variables de entorno
+python-dotenv>=1.0.0
+
+# API REST
+flask>=2.3.0
+flask-cors>=4.0.0
+gunicorn>=21.2.0
+
+# Cliente API
+requests>=2.31.0
+
+# Utilidades
+tqdm>=4.65.0
+
+# Testing y visualización
+colorama>=0.4.6
