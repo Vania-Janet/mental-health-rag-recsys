@@ -320,7 +320,6 @@ def debug_info():
             '/search',
             '/emergency',
             '/buscar_especialista',
-            '/mas_especialistas',
             '/consultar_guia_medica'
         ]
     })
@@ -679,167 +678,6 @@ def buscar_especialista():
         }), 500
 
 
-@app.route('/mas_especialistas', methods=['POST'])
-def mas_especialistas():
-    """
-    Endpoint para obtener más especialistas basado en una búsqueda anterior
-    Este endpoint es para cuando el usuario dice "dame más" o "muéstrame otros"
-    
-    Body (JSON):
-    {
-        "sintoma": "ansiedad",           // Los mismos parámetros de la búsqueda original
-        "genero": "mujer",               
-        "presupuesto": "barato",         
-        "ubicacion": "Coyoacán",
-        "offset": 3                      // Nuevo: desde qué resultado comenzar (default 0)
-    }
-    
-    Response: Similar a /buscar_especialista pero con resultados diferentes
-    """
-    try:
-        data = request.get_json()
-        
-        if not data or 'sintoma' not in data:
-            return jsonify({
-                'success': False,
-                'error': 'El parámetro "sintoma" es requerido',
-                'respuesta_voz': 'Lo siento, necesito saber qué tipo de especialistas buscas.'
-            }), 400
-        
-        # Extraer parámetros (iguales que búsqueda original)
-        sintoma = data['sintoma']
-        genero = data.get('genero', '').lower()
-        presupuesto = data.get('presupuesto', '')
-        ubicacion = data.get('ubicacion', '')
-        offset = data.get('offset', 3)  # Por defecto empezar desde el resultado 4
-        
-        logger.info(f"🔍 Búsqueda MÁS especialistas: sintoma='{sintoma}', offset={offset}")
-        
-        # Construir query (igual que búsqueda original)
-        query_parts = [f"Necesito ayuda con {sintoma}"]
-        es_busqueda_digital = any(word in sintoma.lower() for word in [
-            'meditación', 'meditacion', 'mindfulness', 'app', 'aplicación', 
-            'aplicacion', 'herramienta', 'relajación', 'relajacion', 'yoga'
-        ])
-        
-        if ubicacion and not es_busqueda_digital:
-            query_parts.append(f"cerca de {ubicacion}")
-        if genero:
-            query_parts.append(f"especialista {genero}")
-        query = " ".join(query_parts)
-        
-        # Configurar filtros (igual que búsqueda original)
-        filters = QueryFilters()
-        
-        if presupuesto:
-            presupuesto_lower = presupuesto.lower()
-            if any(word in presupuesto_lower for word in ['barato', 'económico', 'gratuito', 'gratis', 'sin dinero', 'estudiante', 'barata']):
-                filters.max_cost = 600
-                filters.es_gratuito = True
-            elif any(word in presupuesto_lower for word in ['medio', 'moderado', 'accesible', 'razonable']):
-                filters.max_cost = 1200
-            elif any(word in presupuesto_lower for word in ['caro', 'premium', 'privado']):
-                filters.max_cost = 3000
-        
-        if ubicacion and not es_busqueda_digital:
-            filters.delegacion = ubicacion
-        
-        if genero:
-            genero_map = {
-                'hombre': 'Masculino',
-                'masculino': 'Masculino',
-                'mujer': 'Femenino',
-                'femenino': 'Femenino',
-                'femenina': 'Femenino',
-                'cualquiera': 'Mixto',
-                'indistinto': 'Mixto'
-            }
-            genero_normalizado = genero_map.get(genero, genero.capitalize())
-            filters.genero_especialista = genero_normalizado
-        
-        # Buscar con los mismos criterios
-        results = get_retrieval_system().search(query, filters=filters, top_k=15)
-        
-        logger.info(f"✓ Encontrados {len(results)} resultados totales")
-        
-        # Aplicar offset
-        results_paginados = results[offset:offset+3]
-        total_disponibles = len(results)
-        hay_mas = (offset + 3) < total_disponibles
-        
-        if not results_paginados:
-            respuesta_voz = f"Ya te mostré todos los especialistas que encontré para {sintoma}. ¿Quieres que busque con otros criterios?"
-            return jsonify({
-                'success': True,
-                'respuesta_voz': respuesta_voz,
-                'total_resultados': 0,
-                'resultados': [],
-                'paginacion': {
-                    'offset_actual': offset,
-                    'mostrando': 0,
-                    'total_disponibles': total_disponibles,
-                    'hay_mas': False
-                }
-            })
-        
-        mobile_results = format_for_mobile(results_paginados)
-        
-        # Generar respuesta enfocada en "más opciones"
-        respuesta_voz = f"Aquí tienes {len(mobile_results)} especialista{'s' if len(mobile_results) > 1 else ''} más: "
-        
-        # Describir el primero brevemente
-        if mobile_results:
-            primer = mobile_results[0]
-            nombre = primer.get('nombre', 'un especialista')
-            modalidad = primer.get('modalidad', 'Presencial')
-            delegacion = primer.get('ubicacion', {}).get('delegacion', '')
-            costo = primer.get('costo', 'Información disponible')
-            
-            respuesta_voz += f"{nombre}, trabaja {modalidad}"
-            if ubicacion and delegacion:
-                respuesta_voz += f" en {delegacion}"
-            respuesta_voz += f". {costo}. "
-        
-        if len(mobile_results) > 1:
-            respuesta_voz += f"También tengo {len(mobile_results) - 1} opcione{'s' if len(mobile_results) > 2 else ''} más en esta lista. "
-        
-        if hay_mas:
-            resultados_restantes = total_disponibles - (offset + len(results_paginados))
-            respuesta_voz += f"Y aún tengo {resultados_restantes} opcione{'s' if resultados_restantes > 1 else ''} adicional{'es' if resultados_restantes > 1 else ''} si las necesitas."
-        
-        response = {
-            'success': True,
-            'respuesta_voz': respuesta_voz,
-            'parametros': {
-                'sintoma': sintoma,
-                'genero': genero or 'no especificado',
-                'presupuesto': presupuesto or 'no especificado',
-                'ubicacion': ubicacion or 'no especificado'
-            },
-            'paginacion': {
-                'offset_actual': offset,
-                'mostrando': len(mobile_results),
-                'total_disponibles': total_disponibles,
-                'hay_mas': hay_mas,
-                'siguiente_offset': offset + 3 if hay_mas else None
-            },
-            'total_resultados': len(mobile_results),
-            'resultados': mobile_results
-        }
-        
-        logger.info(f"✓ Retornando {len(mobile_results)} resultados adicionales (offset={offset})")
-        return jsonify(response)
-    
-    except Exception as e:
-        logger.error(f"❌ Error en mas_especialistas: {str(e)}")
-        logger.exception(e)
-        return jsonify({
-            'success': False,
-            'error': str(e),
-            'respuesta_voz': 'Lo siento, tuve un problema al buscar más especialistas. ¿Puedes intentarlo de nuevo?'
-        }), 500
-
-
 @app.route('/consultar_guia_medica', methods=['POST'])
 def consultar_guia_medica():
     """
@@ -847,14 +685,20 @@ def consultar_guia_medica():
     
     Body (JSON):
     {
-        "pregunta": "¿Qué hago si tengo un ataque de pánico?"
+        "pregunta": "¿Qué hago si tengo un ataque de pánico?",
+        "top_k": 1  // OPCIONAL - Cuántos artículos retornar (default: 1)
     }
     
     Response:
     {
         "success": true,
         "respuesta_voz": "Para un ataque de pánico, aquí están los pasos...",
-        "articulo": {...}
+        "articulo": {...},
+        "paginacion": {
+            "total_disponibles": 5,
+            "mostrando": 1,
+            "hay_mas": true
+        }
     }
     """
     try:
@@ -868,12 +712,13 @@ def consultar_guia_medica():
             }), 400
         
         pregunta = data['pregunta']
+        top_k = data.get('top_k', 1)  # Por defecto solo 1 artículo
         
-        logger.info(f"📚 Consulta guía médica: '{pregunta}'")
+        logger.info(f"📚 Consulta guía médica: '{pregunta}' (top_k={top_k})")
         
-        # Buscar en base de conocimiento
+        # Buscar en base de conocimiento - buscar más para saber si hay otros disponibles
         logger.info(f"   Llamando a knowledge_system.ask()...")
-        resultados = get_knowledge_system().ask(pregunta, top_k=1, include_context=True)
+        resultados = get_knowledge_system().ask(pregunta, top_k=5, include_context=True)
         logger.info(f"   Resultados obtenidos: {len(resultados) if resultados else 0}")
         
         if not resultados:
@@ -884,7 +729,12 @@ def consultar_guia_medica():
                 'pregunta': pregunta
             }), 200  # Cambiar a 200 para que no sea un error HTTP
         
-        articulo = resultados[0]
+        # Tomar solo los primeros top_k resultados para retornar
+        resultados_a_mostrar = resultados[:top_k]
+        total_disponibles = len(resultados)
+        hay_mas = total_disponibles > top_k
+        
+        articulo = resultados_a_mostrar[0]
         tema = articulo.get('tema', 'Información')
         categoria = articulo.get('categoria', 'General')
         nivel_urgencia = articulo.get('nivel_urgencia', 'N/A')
@@ -921,6 +771,10 @@ def consultar_guia_medica():
                     nombre = paso.get('nombre', paso.get('accion', ''))
                     respuesta_voz_parts.append(f"{i}. {nombre}. ")
         
+        # Informar si hay más técnicas/recursos disponibles
+        if hay_mas:
+            respuesta_voz_parts.append(f"También tengo {total_disponibles - top_k} técnica{'s' if (total_disponibles - top_k) > 1 else ''} más relacionada{'s' if (total_disponibles - top_k) > 1 else ''} que te pueden ayudar. ¿Quieres conocerlas?")
+        
         respuesta_voz = "".join(respuesta_voz_parts)
         
         # Formatear artículo completo para contexto (opcional)
@@ -943,10 +797,16 @@ def consultar_guia_medica():
             'success': True,
             'respuesta_voz': respuesta_voz,
             'pregunta': pregunta,
-            'articulo': articulo_formateado
+            'articulo': articulo_formateado,
+            'paginacion': {
+                'mostrando': len(resultados_a_mostrar),
+                'total_disponibles': total_disponibles,
+                'hay_mas': hay_mas,
+                'siguiente_top_k': top_k + 1 if hay_mas else None
+            }
         }
         
-        logger.info(f"✓ Retornando respuesta para consulta guía médica")
+        logger.info(f"✓ Retornando respuesta para consulta guía médica (mostrando {len(resultados_a_mostrar)} de {total_disponibles})")
         return jsonify(response)
     
     except Exception as e:
