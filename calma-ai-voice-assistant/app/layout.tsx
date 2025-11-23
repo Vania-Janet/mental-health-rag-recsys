@@ -10,9 +10,8 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Calma - Mental Health AI Assistant",
-  description: "Your zen AI voice companion for mental wellness",,
-  // ... existing metadata ...
-    generator: 'v0.app'
+  description: "Your zen AI voice companion for mental wellness",
+  generator: 'v0.app'
 }
 
 export default function RootLayout({

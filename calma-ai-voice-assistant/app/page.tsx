@@ -43,15 +43,38 @@ export default function Page() {
       </header>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-start px-6 py-8 gap-8 overflow-y-auto">
-        {/* Welcome Section - Now Visible Above Widget */}
-        <div className="w-full max-w-md text-center pt-4">
-          <h2 className="text-2xl font-semibold text-foreground mb-4">¡Bienvenido a Calma!</h2>
+      <main className="flex-1 flex flex-col items-center justify-between px-6 py-8 overflow-y-auto pb-20">
+        {/* Welcome Section */}
+        <div className="w-full max-w-md text-center space-y-6 pt-8">
+          <div className="space-y-2">
+            <h1 className="text-3xl font-bold text-foreground">Calma</h1>
+            <p className="text-muted-foreground text-sm">Tu compañero de bienestar mental</p>
+          </div>
+          
+          <div className="space-y-4 text-left">
+            <div className="bg-secondary/50 rounded-lg p-4 space-y-2">
+              <h2 className="font-semibold text-foreground">¿Cómo puedo ayudarte?</h2>
+              <p className="text-sm text-muted-foreground">
+                Puedo ayudarte a encontrar especialistas en salud mental y proporcionarte información sobre:
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                <li>• Búsqueda de psicólogos y terapeutas</li>
+                <li>• Manejo de ansiedad y estrés</li>
+                <li>• Técnicas de relajación</li>
+                <li>• Recursos de apoyo emocional</li>
+              </ul>
+            </div>
+          </div>
         </div>
 
-        {/* Made the widget smaller by reducing max-w and constraining size */}
-        <div className="w-20 h-20 flex items-center justify-center">
-          <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>
+        {/* Voice Assistant Widget - Positioned at bottom center */}
+        <div className="w-full max-w-md flex flex-col items-center gap-4 pb-4">
+          <p className="text-sm text-muted-foreground text-center">
+            Presiona el botón para hablar conmigo
+          </p>
+          <div className="flex justify-center items-center w-full">
+            <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>
+          </div>
         </div>
       </main>
 

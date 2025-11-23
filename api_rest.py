@@ -28,7 +28,7 @@ logger = logging.getLogger(__name__)
 
 # Inicializar Flask
 app = Flask(__name__)
-CORS(app)  # Permitir CORS para llamadas desde móvil
+CORS(app, resources={r"/*": {"origins": "*"}})  # Permitir CORS para llamadas desde móvil
 
 # Variables globales para sistemas (se cargan al iniciar para respuestas rápidas)
 retrieval_system = None
@@ -51,8 +51,16 @@ def init_systems():
 @app.before_request
 def ensure_systems_loaded():
     """Asegura que los sistemas estén cargados antes de cualquier request"""
+    logger.info(f"📥 Incoming request: {request.method} {request.path}")
     if retrieval_system is None or knowledge_system is None:
+        logger.warning("⚠️ Sistemas no cargados, inicializando...")
         init_systems()
+
+@app.after_request
+def log_response(response):
+    """Log de todas las respuestas"""
+    logger.info(f"📤 Outgoing response: {request.method} {request.path} - Status: {response.status_code}")
+    return response
 
 # Palabras clave de crisis y alto riesgo
 CRISIS_KEYWORDS = [
@@ -283,7 +291,37 @@ def health_check():
     return jsonify({
         'status': 'healthy',
         'service': 'Mental Health Retrieval API',
-        'version': '1.0.0'
+        'version': '1.0.0',
+        'systems': {
+            'retrieval_loaded': retrieval_system is not None,
+            'knowledge_loaded': knowledge_system is not None
+        }
+    })
+
+
+@app.route('/debug', methods=['GET'])
+def debug_info():
+    """
+    Endpoint de debug para verificar el estado del sistema
+    """
+    import sys
+    return jsonify({
+        'status': 'debug',
+        'systems': {
+            'retrieval_loaded': retrieval_system is not None,
+            'knowledge_loaded': knowledge_system is not None,
+            'retrieval_specialists_count': len(retrieval_system.especialistas) if retrieval_system else 0,
+            'knowledge_articles_count': len(knowledge_system.articles) if knowledge_system else 0
+        },
+        'python_version': sys.version,
+        'endpoints': [
+            '/health',
+            '/debug',
+            '/search',
+            '/emergency',
+            '/buscar_especialista',
+            '/consultar_guia_medica'
+        ]
     })
 
 
@@ -509,7 +547,15 @@ def buscar_especialista():
         
         # Construir query natural para el RecSys
         query_parts = [f"Necesito ayuda con {sintoma}"]
-        if ubicacion:
+        
+        # Detectar si es una búsqueda de servicio digital/app (meditación, relajación, etc.)
+        es_busqueda_digital = any(word in sintoma.lower() for word in [
+            'meditación', 'meditacion', 'mindfulness', 'app', 'aplicación', 
+            'aplicacion', 'herramienta', 'relajación', 'relajacion', 'yoga', 
+            'respiración', 'respiracion', 'ejercicio', 'autoayuda'
+        ])
+        
+        if ubicacion and not es_busqueda_digital:
             query_parts.append(f"cerca de {ubicacion}")
         if genero:
             query_parts.append(f"especialista {genero}")
@@ -530,8 +576,8 @@ def buscar_especialista():
                 filters.max_cost = 3000
             # Si no especifica límite, dejamos sin restricción
         
-        # Filtro de ubicación
-        if ubicacion:
+        # Filtro de ubicación (NO aplicar para búsquedas digitales)
+        if ubicacion and not es_busqueda_digital:
             filters.delegacion = ubicacion
         
         # Filtro de género (usar el campo correcto del sistema)
@@ -551,9 +597,14 @@ def buscar_especialista():
         
         # Log de búsqueda
         logger.info(f"🔍 Búsqueda especialista: sintoma='{sintoma}', genero='{genero}', presupuesto='{presupuesto}', ubicacion='{ubicacion}'")
+        logger.info(f"   Query construida: '{query}'")
+        logger.info(f"   Es búsqueda digital: {es_busqueda_digital}")
+        logger.info(f"   Filtros aplicados: max_cost={filters.max_cost}, delegacion={filters.delegacion}, genero={filters.genero_especialista}")
         
         # Buscar especialistas (top 5 para tener más opciones)
         results = get_retrieval_system().search(query, filters=filters, top_k=5)
+        
+        logger.info(f"✓ Encontrados {len(results)} resultados")
         
         # Limitar a top 3 para la respuesta
         results = results[:3]
@@ -595,10 +646,12 @@ def buscar_especialista():
                 'mensaje': 'Recursos de crisis disponibles 24/7'
             }
         
+        logger.info(f"✓ Retornando {len(mobile_results)} resultados para buscar_especialista")
         return jsonify(response)
     
     except Exception as e:
-        logger.error(f"Error en buscar_especialista: {str(e)}")
+        logger.error(f"❌ Error en buscar_especialista: {str(e)}")
+        logger.exception(e)  # Esto imprime el stack trace completo
         return jsonify({
             'success': False,
             'error': str(e),
@@ -638,14 +691,17 @@ def consultar_guia_medica():
         logger.info(f"📚 Consulta guía médica: '{pregunta}'")
         
         # Buscar en base de conocimiento
+        logger.info(f"   Llamando a knowledge_system.ask()...")
         resultados = get_knowledge_system().ask(pregunta, top_k=1, include_context=True)
+        logger.info(f"   Resultados obtenidos: {len(resultados) if resultados else 0}")
         
         if not resultados:
+            logger.warning(f"⚠️ No se encontraron resultados para: '{pregunta}'")
             return jsonify({
                 'success': False,
                 'respuesta_voz': 'Lo siento, no encontré información sobre eso. ¿Puedes reformular tu pregunta?',
                 'pregunta': pregunta
-            })
+            }), 200  # Cambiar a 200 para que no sea un error HTTP
         
         articulo = resultados[0]
         tema = articulo.get('tema', 'Información')
@@ -709,10 +765,12 @@ def consultar_guia_medica():
             'articulo': articulo_formateado
         }
         
+        logger.info(f"✓ Retornando respuesta para consulta guía médica")
         return jsonify(response)
     
     except Exception as e:
-        logger.error(f"Error en consultar_guia_medica: {str(e)}")
+        logger.error(f"❌ Error en consultar_guia_medica: {str(e)}")
+        logger.exception(e)  # Esto imprime el stack trace completo
         return jsonify({
             'success': False,
             'error': str(e),
