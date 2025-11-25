@@ -90,7 +90,7 @@ export default function EspecialistasPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/20">
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/20 page-transition">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-accent mx-auto mb-4"></div>
           <p className="text-muted-foreground">Cargando recomendaciones...</p>
@@ -101,51 +101,37 @@ export default function EspecialistasPage() {
 
   if (!recommendations || recommendations.total_resultados === 0) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-background to-muted/20 p-6">
-        <Card className="max-w-md w-full">
-          <CardHeader className="text-center">
-            <div className="mx-auto w-16 h-16 bg-muted rounded-full flex items-center justify-center mb-4">
-              <svg className="w-8 h-8 text-muted-foreground" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-            </div>
-            <CardTitle>Sin Recomendaciones</CardTitle>
-            <CardDescription>
-              Aún no hay especialistas recomendados. Inicia una conversación con el asistente de voz para recibir recomendaciones personalizadas.
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="text-center">
-            <Button 
-              onClick={() => window.location.href = '/'}
-              className="bg-accent hover:bg-accent/90"
-            >
-              Volver al Inicio
-            </Button>
-          </CardContent>
-        </Card>
+      <div className="flex flex-col h-screen bg-gradient-to-br from-white via-indigo-50/40 to-blue-50/40">
+        <main className="flex-1 flex items-center justify-center p-6 pb-24">
+          <Card className="max-w-md w-full border-indigo-100 shadow-lg">
+            <CardHeader className="text-center">
+              <div className="mx-auto w-16 h-16 bg-indigo-50 rounded-full flex items-center justify-center mb-4">
+                <svg className="w-8 h-8 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <CardTitle className="text-indigo-900">Sin Recomendaciones</CardTitle>
+              <CardDescription>
+                Aún no hay especialistas recomendados. Habla con Calma y automáticamente guardará los especialistas que te recomiende aquí.
+              </CardDescription>
+            </CardHeader>
+          </Card>
+        </main>
+        <BottomNav />
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/20">
+    <div className="flex flex-col h-screen bg-gradient-to-br from-white via-indigo-50/40 to-blue-50/40 transition-all duration-300">
       {/* Header */}
-      <header className="sticky top-0 z-10 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
-        <div className="container max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
+      <header className="sticky top-0 z-10 bg-white/80 backdrop-blur-sm border-b border-indigo-100">
+        <div className="container max-w-4xl mx-auto px-4 py-4">
           <div className="flex items-center gap-3">
-            <Button
-              variant="ghost"
-              size="icon"
-              onClick={() => window.location.href = '/'}
-              className="mr-2"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-              </svg>
-            </Button>
+            <div className="w-2 h-2 rounded-full bg-indigo-600"></div>
             <div>
-              <h1 className="text-lg font-semibold">Recomendaciones</h1>
-              <p className="text-xs text-muted-foreground">
+              <h1 className="text-lg font-semibold text-indigo-900">Especialistas Recomendados</h1>
+              <p className="text-xs text-gray-600">
                 {recommendations.total_resultados} especialista{recommendations.total_resultados !== 1 ? 's' : ''} encontrado{recommendations.total_resultados !== 1 ? 's' : ''}
               </p>
             </div>

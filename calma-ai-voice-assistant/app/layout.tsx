@@ -13,6 +13,10 @@ export const metadata: Metadata = {
   description: 'Asistente de salud mental',
   generator: 'v0.app',
   manifest: '/manifest.json',
+  icons: {
+    icon: '/icon.png',
+    apple: '/icon.png',
+  },
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
@@ -40,6 +44,9 @@ export default function RootLayout({
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Calma" />
+        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="icon" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#4F46E5" />
 
