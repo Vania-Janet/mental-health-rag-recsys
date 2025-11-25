@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Separator } from "@/components/ui/separator"
 import { Alert, AlertDescription } from "@/components/ui/alert"
+import { BottomNav } from "@/components/bottom-nav"
 
 interface Especialista {
   id: string
@@ -381,6 +382,9 @@ export default function EspecialistasPage() {
           </CardContent>
         </Card>
       </main>
+
+      {/* Bottom Navigation */}
+      <BottomNav />
     </div>
   )
 }
