@@ -30,14 +30,7 @@ export default function Page() {
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
       {/* Voice Assistant Widget - Positioned at top center */}
-      <div className="w-full flex flex-col items-center gap-3 pt-6 pb-4 px-6 bg-white/60 backdrop-blur-sm border-b border-indigo-100">
-        <div className="flex items-center gap-3">
-          <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 animate-pulse"></div>
-          <span className="text-lg font-semibold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Calma</span>
-        </div>
-        <p className="text-sm text-indigo-600 font-medium text-center">
-          👋 Presiona el orbe para hablar conmigo
-        </p>
+      <div className="w-full flex flex-col items-center gap-4 pt-8 pb-6 px-6 bg-white/60 backdrop-blur-sm border-b border-indigo-100">
         <div className="flex justify-center items-center w-full">
           <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>
         </div>
@@ -46,13 +39,8 @@ export default function Page() {
       {/* Main Content */}
       <main className="flex-1 flex flex-col items-center justify-start px-6 py-8 overflow-y-auto pb-20">
         {/* Welcome Section */}
-        <div className="w-full max-w-md text-center space-y-8 pt-12">
-          <div className="space-y-4">
-            <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-indigo-500 to-blue-500 shadow-xl shadow-indigo-500/30">
-              <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
+        <div className="w-full max-w-md text-center space-y-8 pt-4">
+          <div className="space-y-3">
             <h1 className="text-4xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Calma</h1>
             <p className="text-gray-600 text-base">Tu compañero de bienestar mental</p>
           </div>
