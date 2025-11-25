@@ -29,21 +29,22 @@ export default function Page() {
 
   return (
     <div className="flex flex-col h-screen bg-gradient-to-br from-white via-blue-50/30 to-indigo-50/50">
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-5 bg-white/80 backdrop-blur-sm border-b border-indigo-100">
+      {/* Voice Assistant Widget - Positioned at top center */}
+      <div className="w-full flex flex-col items-center gap-3 pt-6 pb-4 px-6 bg-white/60 backdrop-blur-sm border-b border-indigo-100">
         <div className="flex items-center gap-3">
           <div className="w-2.5 h-2.5 rounded-full bg-gradient-to-r from-indigo-500 to-blue-500 animate-pulse"></div>
           <span className="text-lg font-semibold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">Calma</span>
         </div>
-        <button className="text-indigo-400 hover:text-indigo-600 transition-colors">
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </header>
+        <p className="text-sm text-indigo-600 font-medium text-center">
+          👋 Presiona el orbe para hablar conmigo
+        </p>
+        <div className="flex justify-center items-center w-full">
+          <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>
+        </div>
+      </div>
 
       {/* Main Content */}
-      <main className="flex-1 flex flex-col items-center justify-between px-6 py-8 overflow-y-auto pb-20">
+      <main className="flex-1 flex flex-col items-center justify-start px-6 py-8 overflow-y-auto pb-20">
         {/* Welcome Section */}
         <div className="w-full max-w-md text-center space-y-8 pt-12">
           <div className="space-y-4">
@@ -84,15 +85,6 @@ export default function Page() {
           </div>
         </div>
 
-        {/* Voice Assistant Widget - Positioned at bottom center */}
-        <div className="w-full max-w-md flex flex-col items-center gap-3 pb-4">
-          <p className="text-sm text-indigo-600 font-medium text-center">
-            👋 Presiona el botón para hablar conmigo
-          </p>
-          <div className="flex justify-center items-center w-full">
-            <elevenlabs-convai agent-id="agent_6801kajzvktnemrtm1nxr93n92ed"></elevenlabs-convai>
-          </div>
-        </div>
       </main>
 
       {/* Bottom Navigation */}

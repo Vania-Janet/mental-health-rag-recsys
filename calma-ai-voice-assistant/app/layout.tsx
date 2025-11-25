@@ -1,6 +1,6 @@
 import type React from "react"
 // ... existing code ...
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
@@ -9,9 +9,23 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Calma - Mental Health AI Assistant",
-  description: "Your zen AI voice companion for mental wellness",
-  generator: 'v0.app'
+  title: 'Calma AI',
+  description: 'Asistente de salud mental',
+  generator: 'v0.app',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'Calma AI',
+  },
+}
+
+// Evitar zoom accidental en iPhone y asegurar comportamiento PWA
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 }
 
 export default function RootLayout({
@@ -20,8 +34,15 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
+        {/* PWA / iOS meta tags to enable fullscreen "Add to Home Screen" behavior */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="theme-color" content="#4F46E5" />
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
