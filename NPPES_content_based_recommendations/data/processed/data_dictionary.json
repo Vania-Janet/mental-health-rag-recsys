@@ -1,0 +1,37 @@
+{
+  "dataset_info": {
+    "name": "Mental Health Specialists - RAG Ready",
+    "total_records": 4291,
+    "created_date": "2025-11-30T07:46:03.045646",
+    "source": "NPPES NPI Registry API v2.1"
+  },
+  "fields": {
+    "npi": "National Provider Identifier - unique 10-digit ID",
+    "provider_type": "Individual or Organization",
+    "name": "Provider or organization name",
+    "credential": "Professional credentials (e.g., MD, PhD, LCSW)",
+    "primary_specialty": "Primary taxonomy/specialty description",
+    "primary_specialty_code": "Taxonomy code for primary specialty",
+    "all_specialties": "List of all specialties/taxonomies",
+    "specialty_count": "Number of specialties",
+    "address": "Street address",
+    "city": "City",
+    "state": "State abbreviation",
+    "postal_code": "ZIP/Postal code",
+    "telephone": "Contact telephone number",
+    "description": "Comprehensive text description for RAG retrieval",
+    "status": "Provider status",
+    "last_updated": "Last update date from NPPES"
+  },
+  "statistics": {
+    "individual_providers": 2250,
+    "organizational_providers": 2041,
+    "unique_specialties": 127,
+    "states_covered": 53,
+    "completeness": {
+      "name": "100.0%",
+      "specialty": "100.0%",
+      "location": "100.0%"
+    }
+  }
+}
