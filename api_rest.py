@@ -39,11 +39,11 @@ def init_systems():
     """Inicializa los sistemas al arrancar Gunicorn (solo una vez)"""
     global retrieval_system, knowledge_system
     if retrieval_system is None:
-        logger.info("🔄 Pre-cargando sistema de retrieval...")
+        logger.info("Pre-cargando sistema de retrieval...")
         retrieval_system = MentalHealthRetrieval('recursos_salud_mental_cdmx.json')
         logger.info("✓ Sistema RecSys listo")
     if knowledge_system is None:
-        logger.info("🔄 Pre-cargando sistema de conocimiento...")
+        logger.info("Pre-cargando sistema de conocimiento...")
         knowledge_system = MentalHealthKnowledgeRAG('base_conocimiento_rag_pasos_inmediatos.json')
         logger.info("✓ Sistema RAG listo")
 
@@ -51,9 +51,9 @@ def init_systems():
 @app.before_request
 def ensure_systems_loaded():
     """Asegura que los sistemas estén cargados antes de cualquier request"""
-    logger.info(f"📥 Incoming request: {request.method} {request.path}")
+    logger.info(f"Incoming request: {request.method} {request.path}")
     if retrieval_system is None or knowledge_system is None:
-        logger.warning("⚠️ Sistemas no cargados, inicializando...")
+        logger.warning(" Sistemas no cargados, inicializando...")
         init_systems()
 
 @app.after_request
@@ -91,13 +91,13 @@ def detectar_nivel_crisis(texto: str) -> tuple[str, bool]:
     # Detectar crisis crítica (suicidio/autolesión)
     for keyword in CRISIS_KEYWORDS:
         if keyword in texto_lower:
-            logger.critical(f"🚨 CRISIS DETECTADA: palabra clave '{keyword}' en texto")
+            logger.critical(f"CRISIS DETECTADA: palabra clave '{keyword}' en texto")
             return 'CRITICO', True
     
     # Detectar alto riesgo
     for keyword in HIGH_RISK_KEYWORDS:
         if keyword in texto_lower:
-            logger.warning(f"⚠️ ALTO RIESGO: palabra clave '{keyword}' en texto")
+            logger.warning(f"ALTO RIESGO: palabra clave '{keyword}' en texto")
             return 'ALTO', True
     
     return 'NORMAL', False
@@ -122,7 +122,7 @@ def generar_respuesta_empatica(sintoma: str, nivel_crisis: str, num_resultados: 
     """
     if nivel_crisis == 'CRITICO':
         return (
-            f"⚠️ Escucho que estás pasando por un momento muy difícil. "
+            f"Escucho que estás pasando por un momento muy difícil. "
             f"Tu seguridad es lo más importante. "
             f"Por favor, llama INMEDIATAMENTE a la Línea de la Vida: 800-911-2000, "
             f"o al 911 si necesitas ayuda urgente. Están disponibles 24/7 y es completamente gratuito. "
@@ -669,7 +669,7 @@ def buscar_especialista():
         return jsonify(response)
     
     except Exception as e:
-        logger.error(f"❌ Error en buscar_especialista: {str(e)}")
+        logger.error(f"Error en buscar_especialista: {str(e)}")
         logger.exception(e)  # Esto imprime el stack trace completo
         return jsonify({
             'success': False,
@@ -714,15 +714,15 @@ def consultar_guia_medica():
         pregunta = data['pregunta']
         top_k = data.get('top_k', 1)  # Por defecto solo 1 artículo
         
-        logger.info(f"📚 Consulta guía médica: '{pregunta}' (top_k={top_k})")
+        logger.info(f"🚨 Consulta guía médica: '{pregunta}' (top_k={top_k})")
         
         # Buscar en base de conocimiento - buscar más para saber si hay otros disponibles
-        logger.info(f"   Llamando a knowledge_system.ask()...")
+        logger.info(f"❗️ Llamando a knowledge_system.ask()...")
         resultados = get_knowledge_system().ask(pregunta, top_k=5, include_context=True)
-        logger.info(f"   Resultados obtenidos: {len(resultados) if resultados else 0}")
+        logger.info(f"❗️ Resultados obtenidos: {len(resultados) if resultados else 0}")
         
         if not resultados:
-            logger.warning(f"⚠️ No se encontraron resultados para: '{pregunta}'")
+            logger.warning(f"No se encontraron resultados para: '{pregunta}'")
             return jsonify({
                 'success': False,
                 'respuesta_voz': 'Lo siento, no encontré información sobre eso. ¿Puedes reformular tu pregunta?',
@@ -816,6 +816,58 @@ def consultar_guia_medica():
             'success': False,
             'error': str(e),
             'respuesta_voz': 'Lo siento, tuve un problema al consultar la guía médica. Por favor intenta de nuevo.'
+        }), 500
+
+
+@app.route('/admin/rebuild_faiss', methods=['POST'])
+def admin_rebuild_faiss():
+    """
+    ⚠️ ENDPOINT TEMPORAL ADMIN - Regenera índice FAISS
+    Llamar desde navegador: POST https://tu-api.onrender.com/admin/rebuild_faiss
+    """
+    try:
+        import shutil
+        
+        logger.warning("🔄 ADMIN: Iniciando regeneración de índice FAISS...")
+        
+        # Eliminar cache viejo
+        cache_dir = 'faiss_recursos'
+        if os.path.exists(cache_dir):
+            logger.info(f"🗑️  Eliminando cache: {cache_dir}")
+            shutil.rmtree(cache_dir)
+        
+        # Regenerar sistema con force_rebuild
+        global retrieval_system
+        logger.info("⏳ Regenerando embeddings con OpenAI...")
+        retrieval_system = MentalHealthRetrieval(
+            'recursos_salud_mental_cdmx.json',
+            force_rebuild=True
+        )
+        
+        # Contar tipos
+        psicologos = len([e for e in retrieval_system.especialistas 
+                         if 'psicólog' in e.get('tipo_profesional', '').lower()])
+        psiquiatras = len([e for e in retrieval_system.especialistas 
+                          if 'psiquiatra' in e.get('tipo_profesional', '').lower()])
+        
+        logger.info(f"✅ Índice regenerado: {len(retrieval_system.especialistas)} recursos")
+        logger.info(f"   Psicólogos: {psicologos}, Psiquiatras: {psiquiatras}")
+        
+        return jsonify({
+            'success': True,
+            'message': '✅ Índice FAISS regenerado exitosamente',
+            'total_recursos': len(retrieval_system.especialistas),
+            'psicologos': psicologos,
+            'psiquiatras': psiquiatras,
+            'timestamp': str(time.time())
+        })
+    
+    except Exception as e:
+        logger.error(f"❌ Error en rebuild_faiss: {str(e)}")
+        logger.exception(e)
+        return jsonify({
+            'success': False,
+            'error': str(e)
         }), 500
 
 
