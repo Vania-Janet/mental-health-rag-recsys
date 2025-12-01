@@ -38,6 +38,19 @@ class MentalHealthKnowledgeRAG:
             metadata_path: Ruta para guardar/cargar metadatos
             force_rebuild: Si True, regenera embeddings aunque exista cache
         """
+        # Obtener directorio base (donde está Calma-app/)
+        current_file = os.path.abspath(__file__)
+        rag_dir = os.path.dirname(current_file)
+        calma_app_dir = os.path.dirname(rag_dir)
+        
+        # Resolver rutas relativas a absolutas
+        if not os.path.isabs(knowledge_base_path):
+            knowledge_base_path = os.path.join(calma_app_dir, knowledge_base_path)
+        if not os.path.isabs(index_path):
+            index_path = os.path.join(calma_app_dir, index_path)
+        if not os.path.isabs(metadata_path):
+            metadata_path = os.path.join(calma_app_dir, metadata_path)
+        
         # Cargar base de conocimiento
         with open(knowledge_base_path, 'r', encoding='utf-8') as f:
             self.knowledge_base = json.load(f)
@@ -52,9 +65,13 @@ class MentalHealthKnowledgeRAG:
         self.index_path = index_path
         self.metadata_path = metadata_path
         
-        # Crear directorios si no existen
-        os.makedirs(os.path.dirname(index_path) if os.path.dirname(index_path) else '.', exist_ok=True)
-        os.makedirs(os.path.dirname(metadata_path) if os.path.dirname(metadata_path) else '.', exist_ok=True)
+        # Crear directorios si no existen (ahora con rutas absolutas seguras)
+        index_dir = os.path.dirname(index_path)
+        metadata_dir = os.path.dirname(metadata_path)
+        if index_dir:
+            os.makedirs(index_dir, exist_ok=True)
+        if metadata_dir:
+            os.makedirs(metadata_dir, exist_ok=True)
         
         # Intentar cargar desde cache
         if not force_rebuild and os.path.exists(index_path) and os.path.exists(metadata_path):
