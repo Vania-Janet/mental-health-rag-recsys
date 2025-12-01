@@ -1,0 +1,458 @@
+{
+  "ansiedad": {
+    "titulo_seccion": "Lecturas para calmar la mente",
+    "insight_big_data": "Los usuarios han encontrado alivio en estos libros.",
+    "libros": [
+      {
+        "id": "B00IBHT2KS",
+        "titulo": "ANXIETY: Anxiety Management & Relief",
+        "autor": "Jhon Dunn",
+        "rating_amazon": "3.4",
+        "review_count": "81",
+        "cover_url": "https://m.media-amazon.com/images/I/71nfLNo9O7L._SY342_.jpg",
+        "por_que_leerlo": "Una guía clara para entender qué es la ansiedad, reconocerla, prevenirla y manejarla con estrategias prácticas para que no controle tu vida."
+      },
+      {
+        "id": "B00FHJJSIO",
+        "titulo": "Anxiety Meditation",
+        "autor": "Allan Twain",
+        "rating_amazon": "4.0",
+        "review_count": "25",
+        "cover_url": "https://m.media-amazon.com/images/I/81dQ+OI6BgL._SY342_.jpg",
+        "por_que_leerlo": "Un método natural basado en meditación y movimiento consciente para calmar la ansiedad, reducir ataques y recuperar equilibrio sin depender de medicamentos."
+      },
+      {
+        "id": "B00FYY45EE",
+        "titulo": "Holistic Relaxation: Erase Anxiety!",
+        "autor": "Marta Tuchowska",
+        "rating_amazon": "4.3",
+        "review_count": "52",
+        "cover_url": "https://m.media-amazon.com/images/I/81Z2tqpUsRL._SY342_.jpg",
+        "por_que_leerlo": "Un enfoque natural para equilibrar cuerpo y mente mediante terapias alternativas, nutrición y técnicas de relajación que reducen la ansiedad desde su raíz."
+      },
+      {
+        "id": "B009TDJ5WI",
+        "titulo": "Dark Angel Notes on Anxiety and Depression",
+        "autor": " Peter Wunstorf ",
+        "rating_amazon": "4.0",
+        "review_count": "74",
+        "cover_url": "https://m.media-amazon.com/images/I/81p8ishUkKL._SY342_.jpg",
+        "por_que_leerlo": "Una guía honesta que explora las raíces profundas de la ansiedad y la depresión para enfrentarlas con comprensión, sentido y un camino interno hacia la calma real."
+      },
+      {
+        "id": "B00GL3UCLW",
+        "titulo": "The Social Anxiety Cure",
+        "autor": "Alex White",
+        "rating_amazon": "4.2",
+        "review_count": "12",
+        "cover_url": "https://m.media-amazon.com/images/I/81hRfWZDHVL._SY342_.jpg",
+        "por_que_leerlo": "Una explicación sencilla de qué es la ansiedad social y cómo superarla con hábitos, confianza y apoyo práctico para dejar de vivir con miedo a las situaciones sociales."
+      },
+      {
+        "id": "B00KGM8UC2",
+        "titulo": "Shyness and Social Anxiety",
+        "autor": "Alvira Torres",
+        "rating_amazon": "4.0",
+        "review_count": "15",
+        "cover_url": "https://m.media-amazon.com/images/I/91ITHExsBCL._SY342_.jpg",
+        "por_que_leerlo": "Una guía para transformar la ansiedad social y la timidez en confianza real mediante hábitos, mentalidad y habilidades que te permiten conectar sin miedo y sentirte seguro con los demás."
+      },
+      {
+        "id": "B00LI75X92",
+        "titulo": "Panic & Anxiety Relief",
+        "autor": "Jeff Gunn",
+        "rating_amazon": "3.8",
+        "review_count": "468",
+        "cover_url": "https://m.media-amazon.com/images/I/813xk7aslHL._SY342_.jpg",
+        "por_que_leerlo": "Un manual directo para reconocer tus verdaderos detonantes y romper los patrones de pensamiento que alimentan la ansiedad y el pánico, transformándolos en calma y control real."
+      },
+      {
+        "id": "B00HSLWM2I",
+        "titulo": "Panic Attacks",
+        "autor": "Howard Romst",
+        "rating_amazon": "3.9",
+        "review_count": "30",
+        "cover_url": "https://m.media-amazon.com/images/I/81tNTi1aHEL._SY342_.jpg",
+        "por_que_leerlo": "Un resumen personal y práctico de técnicas reales para entender tus ataques de ansiedad, manejar tus detonantes y vivir con más calma aun cuando la ansiedad siga presente."
+      },
+      {
+        "id": "B00I28F0SO",
+        "titulo": "The Essential Self-help Guide STRESS AND ANXIETY RELIEF",
+        "autor": "Sam Lancaster",
+        "rating_amazon": "3.4",
+        "review_count": "39",
+        "cover_url": "https://m.media-amazon.com/images/I/81TWbAIbzQL._SY342_.jpg",
+        "por_que_leerlo": "Una guía para entender tu ansiedad y usar cambios mentales y hábitos reales para recuperar el control, calmar la mente y vivir con menos preocupación y más estabilidad."
+      },
+      {
+        "id": "B00I76Y0F0",
+        "titulo": "Phobias, Anxiety and Panic Attacks",
+        "autor": "Michael E. Reese",
+        "rating_amazon": "3.4",
+        "review_count": "22",
+        "cover_url": "https://m.media-amazon.com/images/I/81ClKT7l7RL._SY342_.jpg",
+        "por_que_leerlo": "Una introducción clara que explica qué son las fobias, la ansiedad y los ataques de pánico, sus causas y tratamientos, y cómo recuperar esperanza y control sobre tu vida."
+      },
+      {
+        "id": "B00KUN7I4S",
+        "titulo": "Social Anxiety",
+        "autor": "Sara Elliott Price",
+        "rating_amazon": "4.0",
+        "review_count": "62",
+        "cover_url": "https://m.media-amazon.com/images/I/81eyIjfSb8L._SY342_.jpg",
+        "por_que_leerlo": "Una guía motivadora para dejar atrás la ansiedad social y recuperar la confianza para sentirte libre y seguro en cualquier situación con otras personas."
+      },
+      {
+        "id": "B00H6UB17I",
+        "titulo": "How to Defeat Anxiety and Panic Attacks",
+        "autor": "Chris Haynes",
+        "rating_amazon": "4.1",
+        "review_count": "13",
+        "cover_url": "https://m.media-amazon.com/images/I/81YWA2asrlL._SY342_.jpg",
+        "por_que_leerlo": "Un testimonio breve sobre cómo superar la ansiedad con métodos naturales cuando los fármacos no ayudan, mostrando un camino sencillo y seguro hacia una vida más tranquila."
+      },
+      {
+        "id": "B00I8A620Q",
+        "titulo": "Anxiety Relief",
+        "autor": "Dee Cohen",
+        "rating_amazon": "3.9",
+        "review_count": "37",
+        "cover_url": "https://m.media-amazon.com/images/I/61SPSM1mBrL._SY342_.jpg",
+        "por_que_leerlo": "Un conjunto de casos reales que muestran cómo la respiración, la meditación y posturas simples pueden aliviar la ansiedad y transformar emociones difíciles en calma y claridad."
+      },
+      {
+        "id": "B00HS3KZ3E",
+        "titulo": "Anxiety Management",
+        "autor": "James Browning",
+        "rating_amazon": "3.4",
+        "review_count": "28",
+        "cover_url": "https://m.media-amazon.com/images/I/81g-KK5ZujL._SY342_.jpg",
+        "por_que_leerlo": "Una guía que te ayuda a entender la ansiedad y combatirla con estrategias claras para dejar de sentirte atrapado y empezar a vivir con libertad y seguridad."
+      },
+      {
+        "id": "B00F7NGW0W",
+        "titulo": "The Social Anxiety Cure",
+        "autor": "Patrick Cogen",
+        "rating_amazon": "3.6",
+        "review_count": "12",
+        "cover_url": "https://m.media-amazon.com/images/I/81pv9S8vvGL._SY342_.jpg",
+        "por_que_leerlo": "Una explicación breve de la ansiedad social y cómo superarla para enfrentar situaciones sociales exigentes sin miedo ni sensación de inferioridad."
+      },
+      {
+        "id": "B00LK4950G",
+        "titulo": "Anxiety Management: 15 Tips to Live Free and Happy",
+        "autor": " Melissa Razo",
+        "rating_amazon": "4.8",
+        "review_count": "16",
+        "cover_url": "https://m.media-amazon.com/images/I/81Vx9byxmNL._SY342_.jpg",
+        "por_que_leerlo": "Un resumen práctico con pasos claros para recuperar tu calma, fortalecer tu autoestima y dejar de permitir que la ansiedad controle tu vida."
+      },
+      {
+        "id": "B00FFLAP72",
+        "titulo": "Panic Attacks Instant Cure. Learn How To Overcome Panic Attacks And Anxiety For Life.",
+        "autor": "Lucie Jones",
+        "rating_amazon": "3.6",
+        "review_count": "23",
+        "cover_url": "https://m.media-amazon.com/images/I/51E6tynoVTL._SY445_SX342_QL70_FMwebp_.jpg",
+        "por_que_leerlo": "Una guía motivadora para romper los límites que la ansiedad y el pánico imponen, recuperar el control de tu mente y vivir con libertad, energía y seguridad."
+      },
+      {
+        "id": "B00JEP2KZU",
+        "titulo": "Anxiety: Coping With Someone Who Has Anxiety",
+        "autor": "Lindsy Help",
+        "rating_amazon": "3.8",
+        "review_count": "29",
+        "cover_url": "https://m.media-amazon.com/images/I/81w1zwY14fL._SY342_.jpg",
+        "por_que_leerlo": "Un recordatorio claro de cómo apoyar a alguien con ansiedad sin perderte a ti mismo ni dejar que sus emociones absorban tu bienestar."
+      },
+      {
+        "id": "B00JO72WC4",
+        "titulo": "The Ultimate Guide For Anxiety Treatment",
+        "autor": "Alessandro De Luca",
+        "rating_amazon": "4.2",
+        "review_count": "9",
+        "cover_url": "https://m.media-amazon.com/images/I/81ns8yBewHL._SY342_.jpg",
+        "por_que_leerlo": "Una guía sencilla con técnicas actuales para controlar la ansiedad y recuperar una vida más tranquila, ya sea para ti o para alguien que quieres."
+      },
+      {
+        "id": "B00IOWBCLM",
+        "titulo": "Anxiety Relief",
+        "autor": "Richard N. Brown",
+        "rating_amazon": "4.2",
+        "review_count": "9",
+        "cover_url": "https://m.media-amazon.com/images/I/71qn69JRceL._SY342_.jpg",
+        "por_que_leerlo": "Un plan claro y práctico para entender la ansiedad, aliviar ataques y crear hábitos duraderos que te ayuden a recuperar el control y vivir con más calma."
+      },
+      {
+        "id": "B00KJLJD3U",
+        "titulo": "Anxiety Attacks",
+        "autor": "Lindsy Help: Complete Guide To Dealing With An Anxiety Disorder and Coping With Panic Attacks",
+        "rating_amazon": "3.4",
+        "review_count": "15",
+        "cover_url": "https://m.media-amazon.com/images/I/81zAhBns2nL._SY342_.jpg",
+        "por_que_leerlo": "Una guía para entender y manejar esos episodios de pánico que aparecen de repente, ayudándote a recuperar control y sentirte seguro otra vez."
+      },
+      {
+        "id": "B00GEB7L1A",
+        "titulo": "How To Overcome Anxiety:Stop Worrying And Start Living",
+        "autor": "Alex Patterson",
+        "rating_amazon": "3.3",
+        "review_count": "10",
+        "cover_url": "https://m.media-amazon.com/images/I/618sWCv0lIL._SY342_.jpg",
+        "por_que_leerlo": "Un libro que te ayuda a entender tu ansiedad, reducirla con ejercicios y cambios de vida, y recuperar la libertad de disfrutar momentos que hoy el miedo te impide vivir."
+      },
+      {
+        "id": "B00JGOZOPC",
+        "titulo": "The 30-Day Social Anxiety Bootcamp",
+        "autor": "Cyrus Thomson",
+        "rating_amazon": "4.1",
+        "review_count": "10",
+        "cover_url": "https://m.media-amazon.com/images/I/71LhOx4YGNL._SY342_.jpg",
+        "por_que_leerlo": "Un programa práctico de 30 días para superar la ansiedad social mediante ejercicios reales, disciplina y compromiso personal."
+      },
+      {
+        "id": "B00LOVXERA",
+        "titulo": "Anxiety: The Most Effective, Permanent Solution To Finally Discover Anxiety Relief For Life",
+        "autor": "Kevin Anderson",
+        "rating_amazon": "3.8",
+        "review_count": "25",
+        "cover_url": "https://m.media-amazon.com/images/I/91LKAfrZ6vL._SY342_.jpg",
+        "por_que_leerlo": "Te muestra métodos prácticos y efectivos para superar la ansiedad y empezar a vivir con más calma y bienestar."
+      },
+      {
+        "id": "B00H1XDVSC",
+        "titulo": "An Inside Job: 5 Steps to Anxiety Relief",
+        "autor": " Bethany Eaton",
+        "rating_amazon": "4.3",
+        "review_count": "38",
+        "cover_url": "https://m.media-amazon.com/images/I/71Ddk0dAH0L._SY342_.jpg",
+        "por_que_leerlo": "Plantea que la verdadera solución a la ansiedad está en el amor propio y ofrece 5 pasos internos para recuperar la calma, sanar y transformar tu vida desde adentro."
+      },
+      {
+        "id": "B00EFW42IU",
+        "titulo": "Anxiety and Panic Attacks",
+        "autor": "John McArthur",
+        "rating_amazon": "4.6",
+        "review_count": "12",
+        "cover_url": "https://m.media-amazon.com/images/I/81Tm1t1B7UL._SY342_.jpg",
+        "por_que_leerlo": "Este libro te muestra alternativas naturales y cambios de vida prácticos para manejar la ansiedad y los ataques de pánico de forma efectiva, sin depender de fármacos y recuperando el equilibrio mental y físico."
+      },
+      {
+        "id": "B00L17ZEIO",
+        "titulo": "Everyday Anxiety Control",
+        "autor": "W. J. Bowman",
+        "rating_amazon": "1.0",
+        "review_count": "1",
+        "cover_url": "https://m.media-amazon.com/images/I/91PKsHDYAlL._SY342_.jpg",
+        "por_que_leerlo": "Es una introducción a un libro que explica qué es la ansiedad, cuándo se vuelve un trastorno y cómo empezar a manejarla."
+      },
+      {
+        "id": "B00L00WAAM",
+        "titulo": "How I Cured My Depression",
+        "autor": "Gabriella Williams",
+        "rating_amazon": "4.8",
+        "review_count": "13",
+        "cover_url": "https://m.media-amazon.com/images/I/814KbIK4GvL._SY342_.jpg",
+        "por_que_leerlo": "Este libro promete una guía natural y paso a paso para superar la depresión y la ansiedad sin medicamentos ni terapia profesional."
+      },
+      {
+        "id": "B00K3B03XK",
+        "titulo": "Anxiety: Anxiety Disorder Guide To Overcoming Anxiety Disorder And Anxiety Disorder Related Illnesses Including Panic Attacks",
+        "autor": "John McQuilkin",
+        "rating_amazon": "4.2",
+        "review_count": "12",
+        "cover_url": "https://m.media-amazon.com/images/I/81SHdtXz5KL._SY342_.jpg",
+        "por_que_leerlo": "Este libro ofrece una guía sencilla y comprensible para superar trastornos de ansiedad, pánico, ansiedad social y fobias, basada en investigación y experiencia cercana."
+      },
+      {
+        "id": "B00FZ7R3EO",
+        "titulo": "Anxiety: Overcoming Fear & Worry",
+        "autor": "C.D. Shelton",
+        "rating_amazon": "4.3",
+        "review_count": "8",
+        "cover_url": "https://m.media-amazon.com/images/I/71DAoqnkQoL._SY342_.jpg",
+        "por_que_leerlo": "Este libro presenta tratamientos y remedios naturales para aliviar la ansiedad crónica, incluyendo tés y opciones terapéuticas, ayudando a reducir el estrés y mejorar el bienestar."
+      },
+      {
+        "id": "B00ENNUQ4A",
+        "titulo": "Overcoming Social Anxiety, a Quick and Clear Guide",
+        "autor": "Dion R. Gardner",
+        "rating_amazon": "4.6",
+        "review_count": "7",
+        "cover_url": "https://m.media-amazon.com/images/I/81ygsIlNkvL._SY342_.jpg",
+        "por_que_leerlo": "Este libro ofrece una guía práctica y directa para superar miedos sociales irracionales y dejar de evitar situaciones cotidianas, ayudándote a enfocarte en lo que realmente importa."
+      },
+      {
+        "id": "B00EWN4XWM",
+        "titulo": "Relaxation Techniques, How To Reduce Stress & Anxiety The Easy Way",
+        "autor": "David Evan",
+        "rating_amazon": "3.5",
+        "review_count": "42",
+        "cover_url": "https://m.media-amazon.com/images/I/61t-Y9v4gQL._SY342_.jpg",
+        "por_que_leerlo": "Este libro ofrece un método paso a paso para manejar el estrés diario y vivir una vida más tranquila y libre de preocupaciones."
+      },
+      {
+        "id": "B00JUEWOWE",
+        "titulo": "Depression and Anxiety Solution: How To Beat Depression, Cure Anxiety And Live A Worry Free Life",
+        "autor": "Jay Starwood",
+        "rating_amazon": "4.1",
+        "review_count": "19",
+        "cover_url": "https://m.media-amazon.com/images/I/71kw4PNkWAL._SY342_.jpg",
+        "por_que_leerlo": "Este libro ofrece estrategias médicas, naturales y holísticas para superar la ansiedad y la depresión, recuperar el control y vivir con más felicidad y menos preocupación."
+      },
+      {
+        "id": "B00I0YZ9K4",
+        "titulo": "Panic Attacks And Anxiety Attacks : Stop Panic Attacks For A Stress Free Life",
+        "autor": "Mike C. Adams",
+        "rating_amazon": "3.9",
+        "review_count": "27",
+        "cover_url": "https://m.media-amazon.com/images/I/81A+71bRMmL._SY342_.jpg",
+        "por_que_leerlo": "Una guía práctica con 40 consejos fáciles de aplicar para reducir la duración e intensidad de los ataques de pánico y aprender a manejarlos eficazmente."
+      },
+      {
+        "id": "B00J5S9MRA",
+        "titulo": "The Panic Attack Cure: The Ultimate Guide to Get Rid Of Anxiety Forever",
+        "autor": "Jack Hunter",
+        "rating_amazon": "3.8",
+        "review_count": "11",
+        "cover_url": "https://m.media-amazon.com/images/I/81vt4QfuI0L._SY342_.jpg",
+        "por_que_leerlo": "Un sistema paso a paso para reentrenar la mente, manejar emociones negativas y liberarse definitivamente de los ataques de pánico y la ansiedad."
+      },
+      {
+        "id": "B00KI8KUCM",
+        "titulo": "Anxiety Signs, Symptoms, Diagnosis, Causes and Treatment",
+        "autor": "Lindsy Help",
+        "rating_amazon": "3.9",
+        "review_count": "22",
+        "cover_url": "https://m.media-amazon.com/images/I/814mJ-hl7QL._SY342_.jpg",
+        "por_que_leerlo": "Explica qué son los trastornos de ansiedad, cómo afectan la vida diaria y los distintos tipos como TOC, estrés postraumático, fobias y pánico."
+      },
+      {
+        "id": "B00KJO2K0U",
+        "titulo": "Anxiety And Depression: AWAY NOW",
+        "autor": "Allan Twain ",
+        "rating_amazon": "3.6",
+        "review_count": "16",
+        "cover_url": "https://m.media-amazon.com/images/I/81Ob2i8gGAL._SY342_.jpg",
+        "por_que_leerlo": "Enseña estrategias prácticas de autoayuda para romper el ciclo de ansiedad y estrés y vivir una vida más tranquila y feliz."
+      },
+      {
+        "id": "B00H2427XK",
+        "titulo": "Anxiety management, Reduce anxiety, release stress and enjoy a stress-free life",
+        "autor": "Mike C. Adams",
+        "rating_amazon": "3.4",
+        "review_count": "52",
+        "cover_url": "https://m.media-amazon.com/images/I/81JjZTPXazL._SY342_.jpg",
+        "por_que_leerlo": "Ofrece 30 consejos claros y prácticos para manejar la ansiedad y superar los ataques cuando ocurren."
+      },
+      {
+        "id": "B00IZOY5L8",
+        "titulo": "Meditation: A Mind and Body Connection",
+        "autor": "C.D. Shelton",
+        "rating_amazon": "3.9",
+        "review_count": "11",
+        "cover_url": "https://m.media-amazon.com/images/I/71OIdku5yFL._SY342_.jpg",
+        "por_que_leerlo": "Este libro explica cómo la meditación y técnicas como mindfulness y relajación ayudan a calmar la mente y reducir la ansiedad."
+      },
+      {
+        "id": "B00A51NFW4",
+        "titulo": "Ending Stress: A Practical Guide to Nondual Meditation and Therapy",
+        "autor": "Jonathan Harrison",
+        "rating_amazon": "4.4",
+        "review_count": "59",
+        "cover_url": "https://m.media-amazon.com/images/I/71lCB15RTWS._SY342_.jpg",
+        "por_que_leerlo": "Enseña cómo eliminar la ansiedad y el estrés usando meditación y enseñanzas budistas para cambiar la percepción mental y calmar la mente."
+      },
+      {
+        "id": "B00HBO8LKE",
+        "titulo": "Anxiety: The Anxiety Handbook",
+        "autor": "Matthew Jones",
+        "rating_amazon": "3.7",
+        "review_count": "19",
+        "cover_url": "https://m.media-amazon.com/images/I/71rcswY04wL._SY342_.jpg",
+        "por_que_leerlo": "Ofrece estrategias comprobadas para entender y tratar la ansiedad, ayudando tanto a quienes la padecen como a su entorno a manejarla mejor."
+      },
+      {
+        "id": "B00GBXDU34",
+        "titulo": "Beating Depression; Take Control of Your Depression and Anxiety For Life",
+        "autor": "Healthy Body Books",
+        "rating_amazon": "3.7",
+        "review_count": "20",
+        "cover_url": "https://m.media-amazon.com/images/I/81mDuXpy6FL._SY342_.jpg",
+        "por_que_leerlo": "Enseña 20 técnicas prácticas para controlar la depresión y la ansiedad, mejorando tu bienestar diario mediante cambios de hábitos, ejercicio, dieta y meditación."
+      },
+      {
+        "id": "B00J42S9L2",
+        "titulo": "Tapping: Learn EFT in 5 Min - The Effective Tapping Solution for Anxiety, Addictions, Weight Loss & Wealth by Using the Tapping Therapy",
+        "autor": "Ben Buckland",
+        "rating_amazon": "4.0",
+        "review_count": "137",
+        "cover_url": "https://m.media-amazon.com/images/I/81fn+jXE5TL._SY342_.jpg",
+        "por_que_leerlo": "Enseña a usar la técnica de EFT Tapping en 5 minutos para superar ansiedad, estrés, miedos y otros problemas emocionales, mejorando bienestar físico y emocional."
+      },
+      {
+        "id": "B00KJO2K0U",
+        "titulo": "Public Speaking Anxiety: The Stress Free Speaker System",
+        "autor": "Mike Pakulski",
+        "rating_amazon": "3.8",
+        "review_count": "8",
+        "cover_url": "https://m.media-amazon.com/images/I/81WkMOz7DWL._SY342_.jpg",
+        "por_que_leerlo": "Enseña pasos sencillos para superar el miedo a hablar en público y la ansiedad escénica, transformando el estrés en confianza y presencia efectiva."
+      },
+      {
+        "id": "B00JOFOYPO",
+        "titulo": "Social Intelligence For Shy People",
+        "autor": "Alessandro De Luca",
+        "rating_amazon": "4.0",
+        "review_count": "10",
+        "cover_url": "https://m.media-amazon.com/images/I/71Irf9WbFDL._SY342_.jpg",
+        "por_que_leerlo": "Enseña cómo superar la ansiedad social, la fobia social y la agorafobia para recuperar confianza, habilidades sociales y control sobre la vida."
+      },
+      {
+        "id": "B00KNLZFJC",
+        "titulo": "The Social Interaction Guide: How to be Confident and Likeable when Socializing, and Overcome Social Anxiety for Good",
+        "autor": "Clara Villeneuve",
+        "rating_amazon": "3.3",
+        "review_count": "54",
+        "cover_url": "https://m.media-amazon.com/images/I/71ou0pwdOvL._SY342_.jpg",
+        "por_que_leerlo": "Enseña cómo superar la ansiedad social y mejorar las habilidades sociales para sentirse más seguro, agradable y disfrutar plenamente de las interacciones."
+      },
+      {
+        "id": "B00LEYH8KQ",
+        "titulo": "Life of an Anxious Man ",
+        "autor": "Karla Drummond",
+        "rating_amazon": "3.0",
+        "review_count": "14",
+        "cover_url": "https://m.media-amazon.com/images/I/719m-Xfh5yL._SY342_.jpg",
+        "por_que_leerlo": "Describe cómo un ataque traumático desencadena ansiedad extrema y paranoia en la vida cotidiana de un hombre común."
+      },
+      {
+        "id": "B00LDYFN68",
+        "titulo": "Be Fearless! How To Use Your Mind To Overcome Fear And Anxiety",
+        "autor": "Stephen Bryant",
+        "rating_amazon": "3.8",
+        "review_count": "37",
+        "cover_url": "https://m.media-amazon.com/images/I/81pAzPYR8zL._SY342_.jpg",
+        "por_que_leerlo": "Enseña a controlar el miedo y la ansiedad usando la mente, para superar bloqueos y vivir con más confianza y valentía."
+      },
+      {
+        "id": "B00D6LYYW0",
+        "titulo": "How to stop negative thinking",
+        "autor": "Steve Norton",
+        "rating_amazon": "4.4",
+        "review_count": "31",
+        "cover_url": "https://m.media-amazon.com/images/I/81vd9KIIqsL._SY342_.jpg",
+        "por_que_leerlo": "Cómo eliminar pensamientos negativos y reemplazarlos por confianza y control emocional mediante técnicas prácticas de reentrenamiento mental."
+      },
+      {
+        "id": "B00AGBHI30",
+        "titulo": "Stress Management: Your Ultimate Guide to Getting Rid of Stress and Anxiety",
+        "autor": "Maddie Alexander",
+        "rating_amazon": "4.3",
+        "review_count": "30",
+        "cover_url": "https://m.media-amazon.com/images/I/51aeJwfBv+L._SY342_.jpg",
+        "por_que_leerlo": "Cómo reducir y controlar el estrés y la ansiedad en la vida diaria mediante técnicas prácticas para recuperar el equilibrio emocional y vivir sin ataques de pánico."
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual Environment
+venv/
+env/
+ENV/
+.venv
+.venv/
+**/venv/
+**/env/
+**/.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Model cache (sentence-transformers)
+.cache/
+models/
+
+# FAISS indices (se regeneran automáticamente)
+**/faiss_pasos/
+**/faiss_recursos/
+**/faiss_nppes/
+*.index
+*.bin
+*.pkl
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+
+# Jupyter Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Documentación
+docs/_build/
+
+# Next.js / Frontend
+node_modules/
+.next/
+out/
+*.tsbuildinfo
+calma-ai-voice-assistant/node_modules/
+calma-ai-voice-assistant/.next/
+calma-ai-voice-assistant/out/
+.vercel
+NPPES_recommendations/venv/
+NPPES_recommendations/faiss_nppes/
+NPPES_recommendations/
