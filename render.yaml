@@ -3,7 +3,7 @@ services:
     name: mental-health-api
     runtime: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn --chdir Calma-app api_rest:app --bind 0.0.0.0:$PORT
+    startCommand: cd Calma-app && gunicorn api_rest:app --bind 0.0.0.0:$PORT
     envVars:
       - key: OPENAI_API_KEY
         sync: false
