@@ -56,6 +56,8 @@ Los avances recientes en **Procesamiento de Lenguaje Natural (NLP)** y **sistema
 
 ### 2.1 Calma AI
 
+![ ](./Calma-app/datos/mock-ups.png) 
+
 Este proyecto presenta **Calma AI**, un sistema de recomendación de especialistas en salud mental basado en Retrieval-Augmented Generation (RAG) que aborda las barreras identificadas mediante:
 
 1. **Búsqueda semántica**: Comprensión del contexto e intención del usuario, no solo coincidencia de palabras clave.
